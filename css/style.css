@@ -4,6 +4,23 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background-light: #ffffff;
+  --background-dark: #000000;
+  --text-color-light: black;
+  --text-color-dark: #f8621f;
+}
+
+body {
+  background-color: var(--background-light);
+  transition: background-color 0.5s;
+}
+
+body.dark {
+  background-color: var(--background-dark);
+  color: var(--text-color-dark);
+}
+
 menu > button {
   border: none;
   outline: none;

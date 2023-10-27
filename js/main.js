@@ -3,7 +3,7 @@
 // Declaraciones de variables y constantes
 let active_mode = true;
 let active_sound = true;
-
+const body = document.body;
 // Botón de mutear
 const muteButton = document.getElementById("mute");
 

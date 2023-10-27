@@ -13,14 +13,18 @@
     <header>
       <nav>
         <menu>
+          <!-- Botón resetear la partida -->
+          <button onclick="reset">
+            <i class="fa-solid fa-rotate-right"></i>
+          </button>
           <!-- Botón silenciar música -->
-          <button id="mute"><i class="fa-solid fa-volume-high"></i></button>
+          <button id="mute">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
           <!-- Botón alternar modo oscuro/claro -->
           <button onclick="lightDark()" id="lightDark">
-            <i class="fa-regular fa-sun"></i>
+            <i class="fa-solid fa-moon"></i>
           </button>
-          <!-- Botón resetear la partida -->
-          <button onclick="reset"></button>
         </menu>
       </nav>
     </header>
@@ -35,6 +39,6 @@
       <button>Modo Samu</button>
     </main>
     <script src="./js/functions.js"></script>
-    <script src="js/main.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
