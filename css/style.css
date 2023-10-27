@@ -1,18 +1,32 @@
+@font-face {
+  font-family: 'nene_weno';
+  src: url('../assets/font/NeNe_WeNo_Width_HandWrite.ttf');
+}
+
+@font-face {
+  font-family: 'handwrited';
+  src: url('../assets/font/handwrited.ttf');
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 :root {
-  --background-light: #ffffff;
+  --background-light: rgb(112, 187, 112);
   --background-dark: #000000;
   --text-color-light: black;
   --text-color-dark: #f8621f;
 }
 
 body {
-  background-color: var(--background-light);
+  background-image: url('../assets/image/bg-body-class.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   transition: background-color 0.5s;
 }
 
@@ -26,4 +40,51 @@ menu > button {
   outline: none;
   background: transparent;
   cursor: pointer;
+}
+
+main {
+  background-image: url('../assets/image/bg-main-notebook.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section > button {
+  height: 2rem;
+  margin-top: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: 'handwrited';
+  font-weight: bold;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+h1 {
+  font-family: 'nene_weno', sans-serif;
+  font-size: 19px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 28px;
+    margin-bottom: 1.1rem;
+  }
+
+  section > button {
+    font-size: 18px;
+  }
 }
