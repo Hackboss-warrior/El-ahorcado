@@ -40,8 +40,15 @@ menu > button {
   outline: none;
   background: transparent;
   cursor: pointer;
+  margin: 0.5rem;
+  color: white;
 }
 
+menu {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0.8rem;
+}
 main {
   background-image: url('../assets/image/bg-main-notebook.svg');
   background-position: center;
