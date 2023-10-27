@@ -26,6 +26,8 @@ Brainstorming
 
 - Game Over: Pantalla con bicho y sonido para asustar.
 
+- Crear favicon
+
 ---
 
 - LÓGICA:

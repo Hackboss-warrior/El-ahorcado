@@ -1,11 +1,39 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El juego del ahorcado</title>
     <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <menu>
+          <!-- Botón silenciar música -->
+          <button id="mute"></button>
+          <!-- Botón alternar modo oscuro/claro -->
+          <button onclick="lightDark()" id="lightDark">
+            <i class="fa-regular fa-sun"></i>
+          </button>
+          <!-- Botón resetear la partida -->
+          <button onclick="reset"></button>
+        </menu>
+      </nav>
+    </header>
+
+    <main>
+      <h1>El juego del ahorcado</h1>
+
+      <!-- Botones para elegir dificultad -->
+      <button>Modo fácil</button>
+      <button>Modo normal</button>
+      <button>Modo difícil</button>
+      <button>Modo Samu</button>
+    </main>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
