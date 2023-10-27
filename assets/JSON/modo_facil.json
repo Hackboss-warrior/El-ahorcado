@@ -1,0 +1,15 @@
+{
+  "sal": [
+    {
+      "pista1": "Condimento para las comidas",
+      "pista2": "Puede proceder del agua del mar"
+    }
+  ],
+
+  "coche": [
+    {
+      "pista1": "Vehículo",
+      "pista2": "Hace falta obtener un carnet para poder conducirlo"
+    }
+  ]
+}
