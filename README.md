@@ -1,6 +1,6 @@
 # El-ahorcado
 
-Primer proyecto de Hackaboss
+# Primer proyecto de Hackaboss
 
 ADD | crear archivo
 DELL | Borrar archivo
@@ -8,7 +8,7 @@ UPD | Actualizar archivo
 
 ---
 
-Brainstorming
+### Brainstorming
 
 - CONCEPTUALIZACIÓN:
 
@@ -30,7 +30,7 @@ Brainstorming
 
 ---
 
-- LÓGICA:
+### LÓGICA:
 
 - Cómo máximo el usuario puede cometer 6 errores.
 
