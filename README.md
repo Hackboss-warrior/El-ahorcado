@@ -8,9 +8,9 @@ UPD | Actualizar archivo
 
 ---
 
-### Brainstorming
+## Brainstorming
 
-- CONCEPTUALIZACIÓN:
+### CONCEPTUALIZACIÓN:
 
 - Modo oscuro (terror) -> Temática pizarra escolar halloween. Fondo pizarra; font nosifer.
 
