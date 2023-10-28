@@ -24,3 +24,15 @@ function volume() {
     muteButton.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
   }
 }
+
+// Función para seleccionar aleatoriamente una palabra y sus pistas
+function seleccionarPalabraAleatoria(jsonData) {
+  const palabras = Object.keys(jsonData);
+  const palabraAleatoria = palabras[Math.floor(Math.random() * palabras.length)];
+  const pistas = jsonData[palabraAleatoria];
+  const pistaAleatoria = pistas[Math.floor(Math.random() * pistas.length)];
+  return {
+    palabra: palabraAleatoria,
+    pista: pistaAleatoria
+  };
+}
