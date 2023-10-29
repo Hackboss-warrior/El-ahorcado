@@ -110,6 +110,32 @@ function keyPress(event) {
   inputLetter(key)
 }
 
+//conteo de marcador
+function accounting(correct) {
+  switch (correct) {
+    case "true":
+      totalScore = totalScore + sum_points;
+      break;
+    case "false":
+      if (totalScore >= 1) {
+        totalScore = totalScore - substract_points;
+      } else {
+        totalScore = 0;
+      }
+      break;
+    case "reset":
+      totalScore = 0;
+      break;
+    case "oneShot":
+      totalScore = 20 + totalScore;
+      break;
+    default:
+      console.error("no has pasado true, false o reset");
+      break;
+  }
+  return totalScore;
+}
+
 // Función leer pulsaciones de teclado en pantalla o en su casa de sugerencia de letras por teclado
 function inputLetter(letras) {
   console.log(letras)
