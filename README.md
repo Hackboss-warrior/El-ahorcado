@@ -69,3 +69,6 @@ BASE DE DATOS:
 - Las palabras y pistas se almacenarán en un JSON, en formato objeto, con la estructura palabra/pista1/pista2.
 
 - Las puntuaciones se almacenan en un contador (variable)
+
+---
+# DOC

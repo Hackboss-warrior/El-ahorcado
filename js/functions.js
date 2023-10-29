@@ -1,5 +1,6 @@
 'use strict';
 
+// Función Controlador de botón de modo noche / modo día
 function lightDark() {
   active_mode = !active_mode;
   const light_dark = document.getElementById('lightDark');
@@ -13,6 +14,7 @@ function lightDark() {
   }
 }
 
+// Función controladora de botón de volumen
 function volume() {
   active_sound = !active_sound;
 
@@ -23,6 +25,41 @@ function volume() {
     console.log('Modo oscuro activado');
     muteButton.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
   }
+}
+
+// Función para cargar el json dependiendo de que hayas seleccionado
+function loadJSON(modo) {
+  let archivoJSON;
+  
+  switch (modo) {
+      case 'facil':
+          archivoJSON = './assets/JSON/modo_facil.json';
+          break;
+      case 'normal':
+          archivoJSON = './assets/JSON/modo_normal.json';
+          break;
+      case 'dificil':
+          archivoJSON = './assets/JSON/modo_dificil.json';
+          break;
+      case 'samu':
+          archivoJSON = './assets/JSON/modo_samu.json';
+          break;
+      default:
+          console.error('Modo no válido');
+          return;
+  }
+
+  fetch(archivoJSON)
+      .then(response => response.json())
+      .then(data => {
+          const palabraSeleccionada = seleccionarPalabraAleatoria(data);
+          console.log("Palabra: " + palabraSeleccionada.palabra);
+          console.log("Pista: " + palabraSeleccionada.pista.pista1);
+          if ((modo === 'facil') || (modo === 'normal')) {
+              console.log("Pista: " + palabraSeleccionada.pista.pista2);
+          }
+      })
+      .catch(error => console.error('Error al cargar el JSON:', error));
 }
 
 // Función para seleccionar aleatoriamente una palabra y sus pistas
@@ -42,7 +79,7 @@ function seleccionarPalabraAleatoria(jsonData) {
   };
 }
 
-// Función mostrar teclado en pantalla
+// Función mostrar teclado en pantalla y leer la tecla clickada
 function showKeyboard(a, z) {
   let i = a.charCodeAt(0),
     j = z.charCodeAt(0);
@@ -53,7 +90,7 @@ Las barras invertidas utilizadas abajo se utilizan para representar comillas rea
   for (i; i <= j; i++) {
     letras = String.fromCharCode(i).toUpperCase();
     document.getElementById('keyboard').innerHTML +=
-    "<button onclick= 'inputLetter(\"" + letras + "\")' value='"+letras+"'>" +letras+ "</button>"
+    "<button onclick= 'inputLetter(\"" + letras + "\")' onkeydown= 'inputLetter(\"" + letras + "\")' value='"+letras+"'>" +letras+ "</button>"
     console.log(letras);
     if (i === 110){
       document.getElementById('keyboard').innerHTML +=
@@ -62,7 +99,13 @@ Las barras invertidas utilizadas abajo se utilizan para representar comillas rea
   }
 }
 
+// Función leer la tecla pulsada en el teclado
+function keyPress(event) {
+  const key = event.key; // Obtiene la tecla que se presionó
+  inputLetter(key)
+}
 
+// Función leer pulsaciones de teclado en pantalla o en su casa de sugerencia de letras por teclado
 function inputLetter(letras){
   console.log(letras)
 }
