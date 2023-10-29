@@ -19,8 +19,3 @@ muteButton.addEventListener("click", volume);
 //ejem.addEventListener("keydown", keyPress);
 
 
- document.addEventListener("keydown", function (event) {
-     document.getElementById("main-screen").focus();
-     keyPress(event);
- });
-

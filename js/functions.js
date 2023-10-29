@@ -30,36 +30,36 @@ function volume() {
 // Función para cargar el json dependiendo de que hayas seleccionado
 function loadJSON(modo) {
   let archivoJSON;
-  
+
   switch (modo) {
-      case 'facil':
-          archivoJSON = './assets/JSON/modo_facil.json';
-          break;
-      case 'normal':
-          archivoJSON = './assets/JSON/modo_normal.json';
-          break;
-      case 'dificil':
-          archivoJSON = './assets/JSON/modo_dificil.json';
-          break;
-      case 'samu':
-          archivoJSON = './assets/JSON/modo_samu.json';
-          break;
-      default:
-          console.error('Modo no válido');
-          return;
+    case 'facil':
+      archivoJSON = './assets/JSON/modo_facil.json';
+      break;
+    case 'normal':
+      archivoJSON = './assets/JSON/modo_normal.json';
+      break;
+    case 'dificil':
+      archivoJSON = './assets/JSON/modo_dificil.json';
+      break;
+    case 'samu':
+      archivoJSON = './assets/JSON/modo_samu.json';
+      break;
+    default:
+      console.error('Modo no válido');
+      return;
   }
 
   fetch(archivoJSON)
-      .then(response => response.json())
-      .then(data => {
-          const palabraSeleccionada = seleccionarPalabraAleatoria(data);
-          console.log("Palabra: " + palabraSeleccionada.palabra);
-          console.log("Pista: " + palabraSeleccionada.pista.pista1);
-          if ((modo === 'facil') || (modo === 'normal')) {
-              console.log("Pista: " + palabraSeleccionada.pista.pista2);
-          }
-      })
-      .catch(error => console.error('Error al cargar el JSON:', error));
+    .then(response => response.json())
+    .then(data => {
+      const palabraSeleccionada = seleccionarPalabraAleatoria(data);
+      console.log("Palabra: " + palabraSeleccionada.palabra);
+      console.log("Pista: " + palabraSeleccionada.pista.pista1);
+      if ((modo === 'facil') || (modo === 'normal')) {
+        console.log("Pista: " + palabraSeleccionada.pista.pista2);
+      }
+    })
+    .catch(error => console.error('Error al cargar el JSON:', error));
 }
 
 // Función para seleccionar aleatoriamente una palabra y sus pistas
@@ -84,28 +84,33 @@ function showKeyboard(a, z) {
   let i = a.charCodeAt(0),
     j = z.charCodeAt(0);
   let letras = '';
-/*
-Las barras invertidas utilizadas abajo se utilizan para representar comillas reales que no rompan la concatenación, si omites las barras invertidas estaríamos cortando la concatenación realizada (CR > strings> characters scape)
-*/
+
+  document.addEventListener("keydown", function (event) {
+    document.getElementById("main-screen").focus();
+    keyPress(event);
+  });
+  /*
+  Las barras invertidas utilizadas abajo se utilizan para representar comillas reales que no rompan la concatenación, si omites las barras invertidas estaríamos cortando la concatenación realizada (CR > strings> characters scape)
+  */
   for (i; i <= j; i++) {
     letras = String.fromCharCode(i).toUpperCase();
     document.getElementById('keyboard').innerHTML +=
-    "<button onclick= 'inputLetter(\"" + letras + "\")' onkeydown= 'inputLetter(\"" + letras + "\")' value='"+letras+"'>" +letras+ "</button>"
+      "<button onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'>" + letras + "</button>"
     console.log(letras);
-    if (i === 110){
+    if (i === 110) {
       document.getElementById('keyboard').innerHTML +=
-    "<button onclick= inputLetter(\"Ñ\")> Ñ </button>";
+        "<button onclick= inputLetter(\"Ñ\")> Ñ </button>";
     }
   }
 }
 
 // Función leer la tecla pulsada en el teclado
 function keyPress(event) {
-  const key = event.key; // Obtiene la tecla que se presionó
+  const key = event.key.toUpperCase(); // Obtiene la tecla que se presionó
   inputLetter(key)
 }
 
 // Función leer pulsaciones de teclado en pantalla o en su casa de sugerencia de letras por teclado
-function inputLetter(letras){
+function inputLetter(letras) {
   console.log(letras)
 }
