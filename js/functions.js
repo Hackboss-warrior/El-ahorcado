@@ -129,7 +129,7 @@ function accounting(correct) {
       totalScore = 0;
       break;
     case "oneShot":
-      totalScore = 20 + totalScore;
+      totalScore = oneShot + totalScore;
       break;
     default:
       console.error("no has pasado true, false o reset");
@@ -147,74 +147,67 @@ function spaceGen() {
       "<p class=" + ids + ">_</p>";
   }
 }
-// Función leer pulsaciones de teclado en pantalla o en su casa de sugerencia de letras por teclado
-let z =0;
-let fallaste=0;
-function inputLetter(letras) {
 
+// Función leer pulsaciones de teclado en pantalla o en su casa de sugerencia de letras por teclado
+
+function inputLetter(letras) {
   if (!document.getElementById(letras).disabled) {
     document.getElementById(letras).style.backgroundColor = 'red';
     document.getElementById(letras).disabled = 'true'
     let j = 0;
-
     for (let i = 0; i < wordSize; i++) {
       if (letras === arrayWord[i]) {
-
         const classLetter = document.getElementsByClassName(letras)
         classLetter[j].innerHTML = `<p>${letras}</p>`
-        j = j + 1
-        z=z+1
+        j++
+        z++
         accounting('true')
-      if (z === wordSize) {
-        console.log('win');
       }
-       }
     }
+
+    if (z === wordSize) {
+      console.log('win');
+    }
+    
     const omar = arrayWord.filter(letra => { return letras === letra })
     if (omar.length === 0) {
       accounting('false')
-     fallaste = fallaste+1
-     perder()
-      if (fallaste === 6) {
-        console.log('loose');
-      }
+      fail++
+      loose()
     }
-
     console.log(totalScore);
   }
 }
-function perder() {
-  
 
-console.log(fallaste);
-switch (fallaste) {
-  
+//Función Cuando pierdes
+function loose() {
+  switch (fail) {
+
     case 1:
-    document.getElementById('circle').style.display = "block";
-    console.log('cabeza');
-    break;
+      document.getElementById('circle').style.display = "block";
+      console.log('cabeza');
+      break;
 
     case 2:
-    
-    break;
+
+      break;
 
     case 3:
-    
-    break;
+
+      break;
 
     case 4:
-    
-    break;
+
+      break;
 
     case 5:
-    
-    break;
-    case 6:
-    
-    break;
 
+      break;
+    case maxFails:
+      console.log('loose');
+      break;
 
-
-  default:
-    break;
-}}
+    default:
+      break;
+  }
+}

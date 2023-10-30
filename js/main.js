@@ -7,10 +7,8 @@ const body = document.body;
 let errores=0;
 let arrayWord=[];
 let wordSize;
-//variables contador
-let totalScore = 0;
-const sum_points = 2;
-const substract_points = 1;
+let z = 0;
+let fail = 0;
 // Botón de mutear
 const muteButton = document.getElementById("mute");
 
