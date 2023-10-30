@@ -67,15 +67,14 @@ function seleccionarPalabraAleatoria(jsonData) {
   const palabras = Object.keys(jsonData);
   const palabraAleatoria =
     palabras[Math.floor(Math.random() * palabras.length)];
-  const pistas = jsonData[palabraAleatoria];
-  const pistaAleatoria = pistas[Math.floor(Math.random() * pistas.length)];
-
+  let pistas = jsonData[palabraAleatoria];
+  pistas = pistas[Math.floor(Math.random() * pistas.length) ];
   document.getElementById('main-menu').style.display = 'none';
   document.getElementById('main-screen').style.display = 'block';
   showKeyboard('a', 'z');
   return {
     palabra: palabraAleatoria,
-    pista: pistaAleatoria,
+    pista: pistas,
   };
 }
 
@@ -96,7 +95,6 @@ function showKeyboard(a, z) {
     letras = String.fromCharCode(i).toUpperCase();
     document.getElementById('keyboard').innerHTML +=
       "<button onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'>" + letras + "</button>"
-    console.log(letras);
     if (i === 110) {
       document.getElementById('keyboard').innerHTML +=
         "<button onclick= inputLetter(\"Ñ\")> Ñ </button>";
