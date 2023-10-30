@@ -80,7 +80,8 @@ PUNTUACIONES
 Función de conteo que contiene un switch con cuatro posibles variables que ejecuntan operaciones distintas. la intención es que si marcas reset, reinicie el contador; que sume o reste puntos dependiendo de si acierrtas o no y por ultimo le hemos añadido la posibilidad de un bonus extra si se resuelve la palabra completa.
 
 
-GENERACIÒN DE LETRAS:
+
+GENERACIÓN DE LETRAS:
 Para generar las letras accedemos a los codigos ASCII que recorren de la letra 'a' a la 'z', una vez que los adquirimos utilizamos la funncion String.fromCharCode() para recuperar esas letras que ya tenemos y utilizamos este parametro para llamar a todas las letras y guardarlas en un nuevo botón. Este la envia cuando la llamamos y la muestra en el boton como texto. ahora debemos de pensar que el ASCII es un codigo anglosajón que no contiene nuestra muy querida 'ñ' así  que la añadimos llamándola cuando el bucle llegue a la posición de la "n" y la añadimos a continuación.
 
 
