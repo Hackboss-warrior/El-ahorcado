@@ -77,7 +77,7 @@ function seleccionarPalabraAleatoria(jsonData) {
   document.getElementById("main-screen").style.display = "block";
   showKeyboard("a", "z");
   return {
-    palabra: palabraAleatoria,
+    palabra: palabraAleatoria.toUpperCase(),
     pista: pistas,
   };
 }
@@ -92,9 +92,7 @@ function showKeyboard(a, z) {
     document.getElementById("main-screen").focus();
     keyPress(event);
   });
-  /*
-  Las barras invertidas utilizadas abajo se utilizan para representar comillas reales que no rompan la concatenación, si omites las barras invertidas estaríamos cortando la concatenación realizada (CR > strings> characters scape)
-  */
+
   for (i; i <= j; i++) {
     letras = String.fromCharCode(i).toUpperCase();
     document.getElementById("keyboard").innerHTML += "<button id = '" + letras + "' onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'>" + letras + "</button>";
@@ -141,21 +139,82 @@ function accounting(correct) {
 }
 //Función crea los espacios en funcion al numero de letras de la palabra escogida
 function spaceGen() {
-  let wordSize = arrayWord.length;
-  console.log(wordSize);
-  for (let i = 1; i <= wordSize; i++) {
-    let ids = "hola" + i;
+  wordSize = arrayWord.length;
+
+  for (let i = 0; i < wordSize; i++) {
+    let ids = arrayWord[i].toUpperCase();
     document.getElementById("palabraJuego").innerHTML +=
-      "<p id=" + ids + ">_</p>";
-    console.log(ids);
+      "<p class=" + ids + ">_</p>";
   }
 }
 // Función leer pulsaciones de teclado en pantalla o en su casa de sugerencia de letras por teclado
+let z =0;
+let fallaste=0;
 function inputLetter(letras) {
+
   if (!document.getElementById(letras).disabled) {
     document.getElementById(letras).style.backgroundColor = 'red';
     document.getElementById(letras).disabled = 'true'
-    console.log(letras);
+    let j = 0;
+
+    for (let i = 0; i < wordSize; i++) {
+      if (letras === arrayWord[i]) {
+
+        const classLetter = document.getElementsByClassName(letras)
+        classLetter[j].innerHTML = `<p>${letras}</p>`
+        j = j + 1
+        z=z+1
+        accounting('true')
+      if (z === wordSize) {
+        console.log('win');
+      }
+       }
+    }
+    const omar = arrayWord.filter(letra => { return letras === letra })
+    if (omar.length === 0) {
+      accounting('false')
+     fallaste = fallaste+1
+     perder()
+      if (fallaste === 6) {
+        console.log('loose');
+      }
+    }
+
+    console.log(totalScore);
   }
 }
+function perder() {
+  
 
+console.log(fallaste);
+switch (fallaste) {
+  
+    case 1:
+    document.getElementById('circle').style.display = "block";
+    console.log('cabeza');
+    break;
+
+    case 2:
+    
+    break;
+
+    case 3:
+    
+    break;
+
+    case 4:
+    
+    break;
+
+    case 5:
+    
+    break;
+    case 6:
+    
+    break;
+
+
+
+  default:
+    break;
+}}

@@ -4,7 +4,9 @@
 let active_mode = true;
 let active_sound = true;
 const body = document.body;
+let errores=0;
 let arrayWord=[];
+let wordSize;
 //variables contador
 let totalScore = 0;
 const sum_points = 2;
