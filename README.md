@@ -78,3 +78,7 @@ creamos 5 archivos json distintos para almacenar la nuestro vocabulario con un a
 
 PUNTUACIONES
 Función de conteo que contiene un switch con cuatro posibles variables que ejecuntan operaciones distintas. la intención es que si marcas reset, reinicie el contador; que sume o reste puntos dependiendo de si acierrtas o no y por ultimo le hemos añadido la posibilidad de un bonus extra si se resuelve la palabra completa.
+
+
+GENERACION DE LETRAS:
+para generar las letras accedemos a los codigos ASCII que recorren de la letra 'a' a la 'z', una vez qeu los adquirimos utilizamos la funncion String.fromCharCode() para recuperar esas letras que ya tenemos y utilizamos este parametro para llamar a todas las letras y guardarlas en un nuevo boton que la guarde, la envie cuando la llamemos y la muestre en el boton como texto. ahora debemos de pensar que el ASCII es un codigo alglosajon que no contiene nuestra muy querida 'ñ' asi  que la añadimos llamandola cuando se ejecute la letra 'n'
