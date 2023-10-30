@@ -81,8 +81,8 @@ function seleccionarPalabraAleatoria(jsonData) {
 
 // Función mostrar teclado en pantalla y leer la tecla clickada
 function showKeyboard(a, z) {
-  let i = a.charCodeAt(0),
-    j = z.charCodeAt(0);
+  let i = a.charCodeAt(0);
+  let j = z.charCodeAt(0);
   let letras = '';
 
   document.addEventListener("keydown", function (event) {
