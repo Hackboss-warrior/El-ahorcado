@@ -98,7 +98,7 @@ function showKeyboard(a, z) {
       "<button onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'>" + letras + "</button>"
     if (i === 110) {
       document.getElementById('keyboard').innerHTML +=
-        "<button onclick= inputLetter(\"Ñ\")> Ñ </button>";
+        "<button onclick= inputLetter('Ñ')> Ñ </button>";
     }
   }
 }
