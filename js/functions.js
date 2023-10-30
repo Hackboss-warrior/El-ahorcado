@@ -68,7 +68,8 @@ function seleccionarPalabraAleatoria(jsonData) {
   const palabraAleatoria =
     palabras[Math.floor(Math.random() * palabras.length)];
   let pistas = jsonData[palabraAleatoria];
-  pistas = pistas[Math.floor(Math.random() * pistas.length) ];
+  pistas = pistas[0]
+  
   document.getElementById('main-menu').style.display = 'none';
   document.getElementById('main-screen').style.display = 'block';
   showKeyboard('a', 'z');
