@@ -72,3 +72,9 @@ BASE DE DATOS:
 
 ---
 # DOC
+
+DOCUMENTACION JSON
+creamos 5 archivos json distintos para almacenar la nuestro vocabulario con un array con dos pistas
+
+PUNTUACIONES
+Función de conteo que contiene un switch con cuatro posibles variables que ejecuntan operaciones distintas. la intención es que si marcas reset, reinicie el contador; que sume o reste puntos dependiendo de si acierrtas o no y por ultimo le hemos añadido la posibilidad de un bonus extra si se resuelve la palabra completa.
