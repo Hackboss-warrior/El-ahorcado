@@ -52,7 +52,7 @@ function loadJSON(modo) {
   fetch(archivoJSON)
     .then((response) => response.json())
     .then((data) => {
-      palabraSeleccionada = seleccionarPalabraAleatoria(data);
+      const palabraSeleccionada = seleccionarPalabraAleatoria(data);
       console.log("Palabra: " + palabraSeleccionada.palabra);
       console.log("Pista: " + palabraSeleccionada.pista.pista1);
       if (modo === "facil" || modo === "normal") {
@@ -65,23 +65,6 @@ function loadJSON(modo) {
     .catch((error) => console.error("Error al cargar el JSON:", error));
 }
 
-// Función para generar un botón para seleccionar pistas
-let numeroClics = 0
-
-function solicitarPistas() {
-  numeroClics++;
-
-  if (numeroClics === 1) {
-    showPistas.style.display = "block";
-    showPistas.innerHTML = "<p>" + palabraSeleccionada.pista.pista1 + "</p>"
-
-  } else if (numeroClics === 2) {
-    showPistas.innerHTML = `<p>${palabraSeleccionada.pista.pista1} <br> ${palabraSeleccionada.pista.pista2}</p>`
-    pistasButton.disabled = "true";
-  }
-  accounting("pista")
-}
-
 // Función para seleccionar aleatoriamente una palabra y sus pistas
 function seleccionarPalabraAleatoria(jsonData) {
   const palabras = Object.keys(jsonData);
@@ -91,7 +74,7 @@ function seleccionarPalabraAleatoria(jsonData) {
   pistas = pistas[0];
 
   document.getElementById("main-menu").style.display = "none";
-  document.getElementById("main-screen").style.display = "flex";
+  document.getElementById("main-screen").style.display = "block";
   showKeyboard("a", "z");
   return {
     palabra: palabraAleatoria.toUpperCase(),
@@ -148,24 +131,12 @@ function accounting(correct) {
     case "oneShot":
       totalScore = oneShot + totalScore;
       break;
-
-    case "pista":
-      if (totalScore >= 1) {
-        totalScore = totalScore - substract_points;
-      } else {
-        totalScore = 0;
-      }
-      break;
-
     default:
       console.error("no has pasado true, false o reset");
       break;
   }
-
-  return document.getElementById("contador").textContent = totalScore;
+  return totalScore;
 }
-
-
 //Función crea los espacios en funcion al numero de letras de la palabra escogida
 function spaceGen() {
   wordSize = arrayWord.length;
@@ -178,12 +149,6 @@ function spaceGen() {
 }
 
 // Función leer pulsaciones de teclado en pantalla o en su casa de sugerencia de letras por teclado
-let z = 0;
-let fallaste = 0;
-function inputLetter(letras) {
-
-
-// Función leer pulsaciones de teclado en pantalla o en su casa de sugerencia de letras por teclado
 
 function inputLetter(letras) {
   if (!document.getElementById(letras).disabled) {
@@ -194,36 +159,29 @@ function inputLetter(letras) {
       if (letras === arrayWord[i]) {
         const classLetter = document.getElementsByClassName(letras)
         classLetter[j].innerHTML = `<p>${letras}</p>`
-        j = j + 1
-        z = z + 1
+        j++
+        z++
         accounting('true')
-        if (z === wordSize) {
-          console.log('win');
-        }
       }
     }
 
     if (z === wordSize) {
       console.log('win');
     }
-
+    
     const omar = arrayWord.filter(letra => { return letras === letra })
     if (omar.length === 0) {
       accounting('false')
-      fallaste = fallaste + 1
-      perder()
-      if (fallaste === 6) {
-        console.log('loose');
-      }
+      fail++
+      loose()
     }
     console.log(totalScore);
   }
 }
-function perder() {
 
-
-  console.log(fallaste);
-  switch (fallaste) {
+//Función Cuando pierdes
+function loose() {
+  switch (fail) {
 
     case 1:
       document.getElementById('circle').style.display = "block";
@@ -245,18 +203,11 @@ function perder() {
     case 5:
 
       break;
-    case 6:
-
-      break;
-
-      break;
     case maxFails:
       console.log('loose');
       break;
-
 
     default:
       break;
   }
 }
-
