@@ -9,6 +9,7 @@ let arrayWord=[];
 let wordSize;
 let z = 0;
 let fail = 0;
+let ids;
 // Botón de mutear
 const muteButton = document.getElementById("mute");
 
@@ -17,6 +18,7 @@ let palabraSeleccionada;
 const pistasButton = document.getElementById("buttonPistas")
 const showPistas = document.getElementById("showPistas")
 pistasButton.addEventListener("click",solicitarPistas)
+let numeroClics = 0;
 
 // Eventos click
 muteButton.addEventListener("click", volume);

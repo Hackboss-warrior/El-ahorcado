@@ -48,7 +48,6 @@ function loadJSON(modo) {
       console.error("Modo no válido");
       return;
   }
-
   fetch(archivoJSON)
     .then((response) => response.json())
     .then((data) => {
@@ -66,20 +65,25 @@ function loadJSON(modo) {
 }
 
 // Función para generar un botón para seleccionar pistas
-let numeroClics = 0
-
 function solicitarPistas() {
   numeroClics++;
 
-  if (numeroClics === 1) {
+  if (palabraSeleccionada.pista.pista2 !== undefined) {
+    if (numeroClics === 1) {
+      showPistas.style.display = "block";
+      showPistas.innerHTML = "<p>" + palabraSeleccionada.pista.pista1 + "</p>"
+
+    } else if (numeroClics === 2) {
+      showPistas.innerHTML += `<p> ${palabraSeleccionada.pista.pista2}</p>`
+      pistasButton.disabled = "true";
+    }
+  } else {
     showPistas.style.display = "block";
     showPistas.innerHTML = "<p>" + palabraSeleccionada.pista.pista1 + "</p>"
-
-  } else if (numeroClics === 2) {
-    showPistas.innerHTML = `<p>${palabraSeleccionada.pista.pista1} <br> ${palabraSeleccionada.pista.pista2}</p>`
     pistasButton.disabled = "true";
   }
   accounting("false")
+  
 }
 
 // Función para seleccionar aleatoriamente una palabra y sus pistas
@@ -91,7 +95,7 @@ function seleccionarPalabraAleatoria(jsonData) {
   pistas = pistas[0];
 
   document.getElementById("main-menu").style.display = "none";
-  document.getElementById("main-screen").style.display = "flex";
+  document.getElementById("main-screen").style.display = "block";
   showKeyboard("a", "z");
   return {
     palabra: palabraAleatoria.toUpperCase(),
@@ -158,15 +162,18 @@ function accounting(correct) {
 function spaceGen() {
   wordSize = arrayWord.length;
 
+
+
   for (let i = 0; i < wordSize; i++) {
-    let ids = arrayWord[i].toUpperCase();
+    ids = arrayWord[i].toUpperCase();
     document.getElementById("palabraJuego").innerHTML +=
       "<p class=" + ids + ">_</p>";
+
   }
+
 }
 
 // Función leer pulsaciones de teclado en pantalla o en su casa de sugerencia de letras por teclado
-
 function inputLetter(letras) {
   if (!document.getElementById(letras).disabled) {
     document.getElementById(letras).style.backgroundColor = 'red';
@@ -185,7 +192,7 @@ function inputLetter(letras) {
     if (z === wordSize) {
       console.log('win');
     }
-    
+
     const omar = arrayWord.filter(letra => { return letras === letra })
     if (omar.length === 0) {
       accounting('false')
@@ -227,4 +234,42 @@ function loose() {
     default:
       break;
   }
+}
+
+//funcion del botón reset
+function reset() {
+  let a = "a"
+  let z = "z"
+  let i = a.charCodeAt(0);
+  let j = z.charCodeAt(0);
+  let letras = "";
+
+  for (i; i <= j; i++) {
+    letras = String.fromCharCode(i).toUpperCase();
+
+    const keyboardReset = document.getElementById(letras);
+    keyboardReset.remove();
+    if (i === 110) {
+      const keyboardReset = document.getElementById("Ñ");
+      keyboardReset.remove();
+    }
+  }
+
+  //Oro no tocar, costo mucho, corto cabeza
+  for (let i = 0; i < wordSize; i++) {
+    ids = arrayWord[i].toUpperCase();
+    const collection = document.getElementsByClassName(ids);
+    collection[0].remove();
+  }
+
+  z = 0;
+  totalScore = 0;
+  displaydefault()
+}
+
+function displaydefault() {
+  document.getElementById("main-menu").style.display = "flex";
+  document.getElementById("main-screen").style.display = "none";
+  document.getElementById('circle').style.display = "none";
+  document.getElementById("contador").textContent = totalScore;
 }

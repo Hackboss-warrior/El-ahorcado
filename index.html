@@ -13,7 +13,7 @@
     <nav>
       <menu>
         <!-- Botón resetear la partida -->
-        <button onclick="reset">
+        <button onclick="reset()">
           <i class="fa-solid fa-rotate-right"></i>
         </button>
         <!-- Botón silenciar música -->
@@ -41,14 +41,23 @@
   </main>
 
   <div id="main-screen">
-    <div>
-      <p id="contador">0</p>
-    </div>
-    <div class="flex-row">
-      <div class="col">
-        <div id="palabraJuego"></div>
-        <div class="flex-row" id="keyboard"></div>
+
+    <div class="container">
+      <div><h3>Puntos</h3>
+        <p id="contador">0</p>
       </div>
+    </div>
+
+    <div class="containerhorca">
+      <div class="basehorca"></div>
+      <div class="verticalhorca"></div>
+      <div class="baseseghorca"></div>
+      <div class="headstick" id="circle"></div>
+      <div class="rightarmstick"></div>
+      <div class="leftarmstick"></div>
+      <div class="bodystick"></div>
+      <div class="rightlegstick"></div>
+      <div class="leftlegstick"></div>
     </div>
 
     <div>
@@ -56,7 +65,17 @@
       <div id="showPistas">hola</div>
     </div>
 
-    <div class="circle" id="circle">
+    <div class="flex-row">
+      <div class="col">
+        <div id="palabraJuego"></div>
+        <div class="flex-row" id="keyboard"></div>
+      </div>
+    </div>
+
+    
+
+    
+    
 
     </div>
   </div>
