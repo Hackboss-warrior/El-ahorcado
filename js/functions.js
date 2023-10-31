@@ -113,11 +113,11 @@ function showKeyboard(a, z) {
 
   for (i; i <= j; i++) {
     letras = String.fromCharCode(i).toUpperCase();
-    document.getElementById("keyboard").innerHTML += "<button id = '" + letras + "' onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'>" + letras + "</button>";
+    document.getElementById("keyboard").innerHTML += "<button id = '" + letras + "' onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'style=\"color: #345aa9; font-size: 18px; font-family:'nene_weno'\">" + letras + "</button>";
 
     if (i === 110) {
       document.getElementById("keyboard").innerHTML +=
-        "<button id='Ñ' onclick= inputLetter('Ñ')> Ñ </button>";
+        "<button id='Ñ' onclick= inputLetter('Ñ') style=\"color: #345aa9; font-size: 18px; font-family:'nene_weno'\";> Ñ </button>";
     }
   }
 }
@@ -159,8 +159,6 @@ function accounting(correct) {
 function spaceGen() {
   wordSize = arrayWord.length;
 
-
-
   for (let i = 0; i < wordSize; i++) {
     ids = arrayWord[i].toUpperCase();
     document.getElementById("palabraJuego").innerHTML +=
@@ -173,16 +171,17 @@ function spaceGen() {
 // Función leer pulsaciones de teclado en pantalla o en su casa de sugerencia de letras por teclado
 function inputLetter(letras) {
   if (!document.getElementById(letras).disabled) {
-    document.getElementById(letras).style.backgroundColor = 'red';
+    document.getElementById(letras).style.backgroundColor = '#c81d11';
     document.getElementById(letras).disabled = 'true'
     let j = 0;
     for (let i = 0; i < wordSize; i++) {
       if (letras === arrayWord[i]) {
         const classLetter = document.getElementsByClassName(letras)
-        classLetter[j].innerHTML = `<p>${letras}</p>`
+        classLetter[j].innerHTML = `<p style="font-size: 18px;">${letras}</p>`
         j++
         z++
         accounting('true')
+        oneshotbutton()
       }
     }
 
@@ -198,6 +197,22 @@ function inputLetter(letras) {
     }
     console.log(totalScore);
   }
+}
+
+function oneshotbutton(){
+  if (totalScore === 0){
+    let oneshotprompt = prompt("¿Quieres adivinar la palabra?")
+    if (palabraSeleccionada.palabra === oneshotprompt.toUpperCase()){
+      accounting('oneShot')
+      document.getElementById("buttononeshot").style.display = "none";
+    }else if (oneshotprompt === null ){
+    }else{
+      accounting('false')
+      document.getElementById("buttononeshot").style.display = "none";
+    }
+  }else{
+    document.getElementById("buttononeshot").style.display = "none";
+  } 
 }
 
 //Función Cuando pierdes
@@ -264,10 +279,11 @@ function reset() {
   totalScore = 0;
   displaydefault()
 }
-
 function displaydefault() {
   document.getElementById("main-menu").style.display = "flex";
   document.getElementById("main-screen").style.display = "none";
   document.getElementById('circle').style.display = "none";
+  document.getElementById("buttononeshot").style.display = "inline";
+  document.getElementById("buttonPistas").style.display = "inline";
   document.getElementById("contador").textContent = totalScore;
 }
