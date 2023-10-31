@@ -148,8 +148,8 @@ function spaceGen() {
   }
 }
 // Función leer pulsaciones de teclado en pantalla o en su casa de sugerencia de letras por teclado
-let z =0;
-let fallaste=0;
+let z = 0;
+let fallaste = 0;
 function inputLetter(letras) {
 
   if (!document.getElementById(letras).disabled) {
@@ -163,18 +163,18 @@ function inputLetter(letras) {
         const classLetter = document.getElementsByClassName(letras)
         classLetter[j].innerHTML = `<p>${letras}</p>`
         j = j + 1
-        z=z+1
+        z = z + 1
         accounting('true')
-      if (z === wordSize) {
-        console.log('win');
+        if (z === wordSize) {
+          console.log('win');
+        }
       }
-       }
     }
     const omar = arrayWord.filter(letra => { return letras === letra })
     if (omar.length === 0) {
       accounting('false')
-     fallaste = fallaste+1
-     perder()
+      fallaste = fallaste + 1
+      perder()
       if (fallaste === 6) {
         console.log('loose');
       }
@@ -184,37 +184,39 @@ function inputLetter(letras) {
   }
 }
 function perder() {
-  
 
-console.log(fallaste);
-switch (fallaste) {
-  
+
+  console.log(fallaste);
+  switch (fallaste) {
+
     case 1:
-    document.getElementById('circle').style.display = "block";
-    console.log('cabeza');
-    break;
+      document.getElementById('circle').style.display = "block";
+      console.log('cabeza');
+      break;
 
     case 2:
-    
-    break;
+
+      break;
 
     case 3:
-    
-    break;
+
+      break;
 
     case 4:
-    
-    break;
+
+      break;
 
     case 5:
-    
-    break;
+
+      break;
     case 6:
-    
-    break;
+
+      break;
 
 
 
-  default:
-    break;
-}}
+    default:
+      break;
+  }
+}
+
