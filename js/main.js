@@ -16,7 +16,6 @@ const muteButton = document.getElementById("mute");
 // Botón de pistas
 let palabraSeleccionada;
 const pistasButton = document.getElementById("buttonPistas")
-const showPistas = document.getElementById("showPistas")
 pistasButton.addEventListener("click",solicitarPistas)
 let numeroClics = 0;
 

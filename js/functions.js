@@ -70,17 +70,14 @@ function solicitarPistas() {
 
   if (palabraSeleccionada.pista.pista2 !== undefined) {
     if (numeroClics === 1) {
-      showPistas.style.display = "block";
-      showPistas.innerHTML = "<p>" + palabraSeleccionada.pista.pista1 + "</p>"
-
+      alert(palabraSeleccionada.pista.pista1)
     } else if (numeroClics === 2) {
-      showPistas.innerHTML += `<p> ${palabraSeleccionada.pista.pista2}</p>`
-      pistasButton.disabled = "true";
+      alert(palabraSeleccionada.pista.pista2)
+      document.getElementById("buttonPistas").style.display = "none";
     }
   } else {
-    showPistas.style.display = "block";
-    showPistas.innerHTML = "<p>" + palabraSeleccionada.pista.pista1 + "</p>"
-    pistasButton.disabled = "true";
+    alert(palabraSeleccionada.pista.pista1)
+    document.getElementById("buttonPistas").style.display = "none";
   }
   accounting("false")
   
@@ -243,6 +240,7 @@ function reset() {
   let i = a.charCodeAt(0);
   let j = z.charCodeAt(0);
   let letras = "";
+  let numeroClics = 0;
 
   for (i; i <= j; i++) {
     letras = String.fromCharCode(i).toUpperCase();

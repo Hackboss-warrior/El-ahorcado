@@ -89,6 +89,7 @@ h1 {
 h3{
   font-family:'nene_weno', sans-serif;
   text-align: center;
+  color: #345aa9;
 }
 
 #palabraJuego{
@@ -141,22 +142,46 @@ h3{
 }
 
 #contador {
+  font-family: 'handwrited';
   text-align: center;
   justify-content: center;
-  margin-left: 10px;
+  margin-left: 5px;
   height: 25px;
   width: 75px;
-  background-color: red;
+  background-color: #7afcff;
   border-radius: 10px ;
 }
 
 .container{
-  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2%;
+  height: 80px;
   width: 100%;
-  max-width: 100px;
-  background-color: azure;
+}
+
+.containercontador{
+  padding: 0.5%;
+  background-color: #feff9c;
   border-radius: 10px ;
-  margin-left: 20px;
+}
+
+#buttonPistas{
+  font-family:'nene_weno', sans-serif;
+  height: 60px;
+  color: blue;
+  font-size: 2rem;
+  border-radius: 10%;
+  padding: 0 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+  border: none;
+  background-color: #feff9c;
+  transition: transform 0.2s;
+}
+
+#buttonPistas:hover{
+  transform: scale(1.05);
 }
 
 /* Generador de pistas*/
@@ -175,12 +200,15 @@ h3{
 }
 
 .containerhorca{
-  height: 70px;
+  height: 35vh;
   width: 100%;
-  max-width: 100px;
+  max-width: 60vw;
   background-color: azure;
   border-radius: 10px ;
-  margin-bottom: 20px;
+  top: 16%;
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
 }
 
 /* .basehorca{
