@@ -9,3 +9,4 @@ const substract_points = 1;
 const oneShot = 20;
 //Indica el máximo de fallos antes de perder
 const maxFails = 6;
+

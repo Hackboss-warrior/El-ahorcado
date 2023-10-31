@@ -12,6 +12,12 @@ let fail = 0;
 // Botón de mutear
 const muteButton = document.getElementById("mute");
 
+// Botón de pistas
+let palabraSeleccionada;
+const pistasButton = document.getElementById("buttonPistas")
+const showPistas = document.getElementById("showPistas")
+pistasButton.addEventListener("click",solicitarPistas)
+
 // Eventos click
 muteButton.addEventListener("click", volume);
 

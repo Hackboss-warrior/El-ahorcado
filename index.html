@@ -1,68 +1,69 @@
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>El juego del ahorcado</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <menu>
-          <!-- Botón resetear la partida -->
-          <button onclick="reset">
-            <i class="fa-solid fa-rotate-right"></i>
-          </button>
-          <!-- Botón silenciar música -->
-          <button id="mute">
-            <i class="fa-solid fa-volume-high"></i>
-          </button>
-          <!-- Botón alternar modo oscuro/claro -->
-          <button onclick="lightDark()" id="lightDark">
-            <i class="fa-solid fa-moon"></i>
-          </button>
-        </menu>
-      </nav>
-    </header>
 
-    <main id="main-menu">
-      <h1>El juego del ahorcado</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El juego del ahorcado</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
 
-      <!-- Botones para elegir dificultad -->
-      <section>
-        <button onclick="loadJSON('facil')">Modo fácil</button>
-        <button onclick="loadJSON('normal')">Modo normal</button>
-        <button onclick="loadJSON('dificil')">Modo difícil</button>
-        <button onclick="loadJSON('samu')">Modo Samu</button>
-      </section>
-    </main>
+<body>
+  <header>
+    <nav>
+      <menu>
+        <!-- Botón resetear la partida -->
+        <button onclick="reset">
+          <i class="fa-solid fa-rotate-right"></i>
+        </button>
+        <!-- Botón silenciar música -->
+        <button id="mute">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+        <!-- Botón alternar modo oscuro/claro -->
+        <button onclick="lightDark()" id="lightDark">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </menu>
+    </nav>
+  </header>
 
-    <div id="main-screen">
-      <div class="flex-row">
-        <div class="col">
-          <div class="flex-row" id="keyboard"></div>
-        </div>
-      </div>
+  <main id="main-menu">
+    <h1>El juego del ahorcado</h1>
 
-      <div id="palabraJuego">
+    <!-- Botones para elegir dificultad -->
+    <section>
+      <button onclick="loadJSON('facil')">Modo fácil</button>
+      <button onclick="loadJSON('normal')">Modo normal</button>
+      <button onclick="loadJSON('dificil')">Modo difícil</button>
+      <button onclick="loadJSON('samu')">Modo Samu</button>
+    </section>
+  </main>
 
-      </div>
-
-      <div>
-        <p id="contador"></p>
-      </div>
-
-      <div class="circle" id="circle">
-
+  <div id="main-screen">
+    <div>
+      <p id="contador">0</p>
+    </div>
+    <div class="flex-row">
+      <div class="col">
+        <div id="palabraJuego"></div>
+        <div class="flex-row" id="keyboard"></div>
       </div>
     </div>
 
-    <script src="./js/functions.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/config.js"></script>
-  </body>
+    <div>
+      <button id="buttonPistas"> Pedir una pista</button>
+      <div id="showPistas">hola</div>
+    </div>
+
+    <div class="circle" id="circle">
+
+    </div>
+  </div>
+
+  <script src="./js/functions.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/config.js"></script>
+</body>
+
 </html>
