@@ -48,7 +48,7 @@
         <p id="contador">0</p>
       </div>
       <button id="buttononeshot" onclick="oneshotbutton()"><i class="fa-solid fa-crosshairs"></i></button>
-      <button id="buttonPistas"><i class="fa-regular fa-lightbulb" ></i></button>
+      <button id="buttonPistas"><i class="fa-regular fa-lightbulb"></i></button>
     </div>
 
     <div class="containerhorca">
@@ -63,19 +63,23 @@
       <div class="rightlegstick" id="rightlegstick"></div>
       <div class="leftlegstick" id="leftlegstick"></div>
     </div>
-      <div class="flex-row">
-        <div class="col">
-          <div id="palabraJuego"></div>
-          <div id="keyboard"></div>
-        </div>
-      
+
+    <div class="flex-row">
+      <div class="col">
+        <div id="palabraJuego"></div>
+        <div id="keyboard"></div>
+      </div>
     </div>
+  </div>
 
-
-
-
-
-
+  <div class="winScreen" id="pantallaWin">
+    <h2>¡Has ganado!</h2>
+    <video src="./assets/video/" width="350" height="260" autoplay></video>
+    <div id="puntuacion"></div>
+    <div class="winButtons">
+      <button>Continuar</button>
+      <button>Volver a empezar</button>
+    </div>
   </div>
   </div>
 
