@@ -113,11 +113,11 @@ function showKeyboard(a, z) {
 
   for (i; i <= j; i++) {
     letras = String.fromCharCode(i).toUpperCase();
-    document.getElementById("keyboard").innerHTML += "<button id = '" + letras + "' onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'style=\"color: #345aa9; font-size: 18px; font-family:'nene_weno'\">" + letras + "</button>";
+    document.getElementById("keyboard").innerHTML += "<button id = '" + letras + "' onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'style=\"color: #345aa9; height: 3rem; width: 2.5rem; font-size: 18px; font-family:'handwrited'\">" + letras + "</button>";
 
     if (i === 110) {
       document.getElementById("keyboard").innerHTML +=
-        "<button id='Ñ' onclick= inputLetter('Ñ') style=\"color: #345aa9; font-size: 18px; font-family:'nene_weno'\";> Ñ </button>";
+        "<button id='Ñ' onclick= inputLetter('Ñ') style=\"color: #345aa9; height: 3rem; width: 2.5rem; font-size: 18px; font-family:'handwrited'\";> Ñ </button>";
     }
   }
 }
@@ -158,11 +158,10 @@ function accounting(correct) {
 //Función crea los espacios en funcion al numero de letras de la palabra escogida
 function spaceGen() {
   wordSize = arrayWord.length;
-
   for (let i = 0; i < wordSize; i++) {
     ids = arrayWord[i].toUpperCase();
     document.getElementById("palabraJuego").innerHTML +=
-      "<p class=" + ids + ">_</p>";
+      "<span class=" + ids +">_</span>";
 
   }
 
@@ -177,7 +176,7 @@ function inputLetter(letras) {
     for (let i = 0; i < wordSize; i++) {
       if (letras === arrayWord[i]) {
         const classLetter = document.getElementsByClassName(letras)
-        classLetter[j].innerHTML = `<p style="font-size: 18px;">${letras}</p>`
+        classLetter[j].innerHTML = `<p class="lettervisu">${letras}</p>`
         j++
         z++
         accounting('true')
@@ -220,27 +219,26 @@ function loose() {
   switch (fail) {
 
     case 1:
-      document.getElementById('circle').style.display = "block";
-      console.log('cabeza');
+      document.getElementById('headstick').style.display = "block";
       break;
 
     case 2:
-
+      document.getElementById('bodystick').style.display = "block";
       break;
 
     case 3:
-
+      document.getElementById('rightarmstick').style.display = "block";
       break;
 
     case 4:
-
+      document.getElementById('leftarmstick').style.display = "block";
       break;
 
     case 5:
-
+      document.getElementById('rightlegstick').style.display = "block";
       break;
     case maxFails:
-      console.log('loose');
+      document.getElementById('leftlegstick').style.display = "block";
       break;
 
     default:
