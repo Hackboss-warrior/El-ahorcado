@@ -71,18 +71,28 @@
         <div id="keyboard"></div>
       </div>
     </div>
+  
   </div>
-  </div>
-  <div class="winScreen" id="pantallaWin">
+  <!-- screens of victory and game over -->
+  <section class="finalScreen" id="pantallaWin">
     <h2>¡Has ganado!</h2>
     <video src="./assets/video/" width="350" height="260" autoplay></video>
     <div id="puntuacion"></div>
     <div class="winButtons">
       <button onclick="reset()">Volver a empezar</button>
-      <button onclick="won()">Continuar</button>
-
+      <button>Continuar</button>
     </div>
-  </div>
+  </section>
+
+  <section class="finalScreen" id="loseScreen">
+    <h2> !Has fallado!</h2>
+    <video src="./assets/video/" width="350" height="260" autoplay></video>
+    <div id="puntuacion"></div>
+    <div class="loseButtons">
+      <button onclick="reset()">Intentalo de nuevo</button>  
+    </div>
+  </section>
+
   </div>
 
   <script src="./js/functions.js"></script>

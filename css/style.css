@@ -327,13 +327,16 @@ h3{
   transform: translate(-400%, 20px) rotate(-135deg);
 } 
 
-/* Pantalla win */
+/* Pantalla Win & Lose */
 
 #pantallaWin{
   display: none;
 }  
+#loseScreen{
+  display: none;
+}
 
-.winScreen{
+.finalScreen{
   margin: auto;
   background-image: url('../assets/image/bg-winscreen.svg');
   background-position: center;
@@ -350,14 +353,14 @@ h3{
   left: 10%
 }
 
-.winScreen h2 {
+.finalScreen h2 {
   font-family:'nene_weno', sans-serif;
   color: #345aa9;
   font-size: 1.8rem;
   margin-top: 50px;
 }
 
-.winScreen button {
+.finalScreen button {
   display: block;
   width: 200px;
   height: 35px;
@@ -398,13 +401,13 @@ h3{
     font-size: 3rem;
   }
 
-  .winScreen{
+  .finalScreen{
     width: 45%;  
     border-radius: 10px;
     left: 28%;
   }
 
-  .winScreen h2 {
+  .finalScreen h2 {
     font-size: 2.4rem;
     margin-top: 20px
   }
@@ -415,11 +418,11 @@ h3{
     gap: 100px;
   }
 
-.winScreen video {
+.finalScreen video {
   width: 450px;
   height: 360px;
 }
-  .winScreen button {
+  .finalScreen button {
     width: 300px;
     height: 45px;
     font-family: 'handwrited';

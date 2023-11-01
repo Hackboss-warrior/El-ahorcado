@@ -288,4 +288,5 @@ function displaydefault() {
   document.getElementById("buttonPistas").style.display = "inline";
   document.getElementById("contador").textContent = totalScore;
   document.getElementById("pantallaWin").style.display = "none";
+  document.getElementById("loseScreen").style.display = "none";
 }
