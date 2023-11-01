@@ -215,12 +215,12 @@ h3{
   width: 150px;
   background-color: white;
 }
-
+/* Oro no tocar, costo mucho, corto cabeza */
 .containerhorca{
   height: 35vh;
   width: 100%;
   max-width: 60vw;
-  background-color: azure;
+  background-color: transparent;
   border-radius: 10px ;
   top: 10%;
   position: absolute;
@@ -273,16 +273,19 @@ h3{
   position: absolute;
   left: 50.1%; 
   transform: translate(-48%);
+  background-color: white;
+  z-index: 3;
 }
 
 .bodystick{
   top: 27%;
   width: 4px; 
-  height: 100px; 
+  height: 22%; 
   background-color: #000; 
   position: absolute;
   left: 50%; 
-  transform: translate(0%, 36%);
+  transform: translate(0%, 32px);
+  z-index: 2;
 }
 
 .rightarmstick {
@@ -291,7 +294,7 @@ h3{
   height: 50px;
   background-color: #000;
   position: absolute;
-  left: 50.2%;
+  margin-left: 50%;
   transform: translate(400%, 40%) rotate(-45deg);
 } 
 
@@ -301,26 +304,27 @@ h3{
   height: 50px;
   background-color: #000;
   position: absolute;
-  left: 47.9%;
-  transform: translate(200.9%, 40%) rotate(45deg);
+  margin-left: 50.0%;
+  transform: translate(-400%, 40%) rotate(-135deg);
 } 
 
-/* .rightlegstick{
-  top: 51%;
-  width: 4px; 
-  height: 10%; 
-  background-color: #000; 
+.rightlegstick{
+  top: 50%;
+  width: 4px;
+  height: 50px;
+  background-color: #000;
   position: absolute;
-  left: 51.3%; 
-  transform: rotate(-45deg);
+  margin-left: 50%;
+  transform: translate(400%, 20px) rotate(-45deg);
 }
 
+
 .leftlegstick{
-  top: 51%;
-  width: 4px; 
-  height: 10%; 
-  background-color: #000; 
+  top: 50%;
+  width: 4px;
+  height: 50px;
+  background-color: #000;
   position: absolute;
-  left: 48.8%; 
-  transform: rotate(45deg);
-} */
+  margin-left: 50.0%;
+  transform: translate(-400%, 20px) rotate(-135deg);
+} 
