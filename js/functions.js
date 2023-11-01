@@ -80,7 +80,7 @@ function solicitarPistas() {
     document.getElementById("buttonPistas").style.display = "none";
   }
   accounting("false")
-  
+
 }
 
 // Función para seleccionar aleatoriamente una palabra y sus pistas
@@ -113,11 +113,11 @@ function showKeyboard(a, z) {
 
   for (i; i <= j; i++) {
     letras = String.fromCharCode(i).toUpperCase();
-    document.getElementById("keyboard").innerHTML += "<button id = '" + letras + "' onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'style=\"color: #345aa9; height: 3rem; width: 2.5rem; font-size: 18px; font-family:'handwrited'\">" + letras + "</button>";
+    document.getElementById("keyboard").innerHTML += "<button id = '" + letras + "' onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'style=\"color: #345aa9; height: 3rem; width: 2.5rem; font-size: 18px; font-family:'nene_weno'\">" + letras + "</button>";
 
     if (i === 110) {
       document.getElementById("keyboard").innerHTML +=
-        "<button id='Ñ' onclick= inputLetter('Ñ') style=\"color: #345aa9; height: 3rem; width: 2.5rem; font-size: 18px; font-family:'handwrited'\";> Ñ </button>";
+        "<button id='Ñ' onclick= inputLetter('Ñ') style=\"color: #345aa9; height: 3rem; width: 2.5rem; font-size: 18px; font-family:'nene_weno';\";> Ñ </button>";
     }
   }
 }
@@ -161,7 +161,7 @@ function spaceGen() {
   for (let i = 0; i < wordSize; i++) {
     ids = arrayWord[i].toUpperCase();
     document.getElementById("palabraJuego").innerHTML +=
-      "<span class=" + ids +">_</span>";
+      "<span class=" + ids + ">_</span>";
 
   }
 
@@ -186,6 +186,8 @@ function inputLetter(letras) {
 
     if (z === wordSize) {
       console.log('win');
+      document.getElementById("pantallaWin").style.display = "flex";
+      document.getElementById("main-screen").style.display = "none"
     }
 
     const omar = arrayWord.filter(letra => { return letras === letra })
@@ -198,20 +200,20 @@ function inputLetter(letras) {
   }
 }
 
-function oneshotbutton(){
-  if (totalScore === 0){
+function oneshotbutton() {
+  if (totalScore === 0) {
     let oneshotprompt = prompt("¿Quieres adivinar la palabra?")
-    if (palabraSeleccionada.palabra === oneshotprompt.toUpperCase()){
+    if (palabraSeleccionada.palabra === oneshotprompt.toUpperCase()) {
       accounting('oneShot')
       document.getElementById("buttononeshot").style.display = "none";
-    }else if (oneshotprompt === null ){
-    }else{
+    } else if (oneshotprompt === null) {
+    } else {
       accounting('false')
       document.getElementById("buttononeshot").style.display = "none";
     }
-  }else{
+  } else {
     document.getElementById("buttononeshot").style.display = "none";
-  } 
+  }
 }
 
 //Función Cuando pierdes
@@ -277,11 +279,13 @@ function reset() {
   totalScore = 0;
   displaydefault()
 }
+
 function displaydefault() {
   document.getElementById("main-menu").style.display = "flex";
   document.getElementById("main-screen").style.display = "none";
-  document.getElementById('circle').style.display = "none";
+  // document.getElementById('circle').style.display = "none";
   document.getElementById("buttononeshot").style.display = "inline";
   document.getElementById("buttonPistas").style.display = "inline";
   document.getElementById("contador").textContent = totalScore;
+  document.getElementById("pantallaWin").style.display = "none";
 }

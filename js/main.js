@@ -4,8 +4,8 @@
 let active_mode = true;
 let active_sound = true;
 const body = document.body;
-let errores=0;
-let arrayWord=[];
+let errores = 0;
+let arrayWord = [];
 let wordSize;
 let z = 0;
 let fail = 0;
@@ -16,9 +16,10 @@ const muteButton = document.getElementById("mute");
 // Botón de pistas
 let palabraSeleccionada;
 const pistasButton = document.getElementById("buttonPistas")
-pistasButton.addEventListener("click",solicitarPistas)
+pistasButton.addEventListener("click", solicitarPistas)
 let numeroClics = 0;
 
 // Eventos click
 muteButton.addEventListener("click", volume);
+
 

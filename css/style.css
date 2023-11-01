@@ -12,8 +12,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* overflow-y: hidden;
-  overflow-x: hidden; */
+  overflow-y: hidden;
+  overflow-x: hidden; 
 }
 
 :root {
@@ -73,6 +73,7 @@ section > button {
   font-family: 'handwrited';
   font-weight: bold;
   cursor: pointer;
+  color: #345aa9;
 }
 section {
   display: flex;
@@ -100,11 +101,6 @@ h3{
   font-weight:900;
 
 }
-
-
-/* MEDIA QUERIES */
-
-
 
 /*Main screen*/
 
@@ -167,7 +163,7 @@ h3{
 #buttonPistas{
   font-family:'nene_weno', sans-serif;
   height: 60px;
-  color: blue;
+  color: #345aa9;
   font-size: 2rem;
   border-radius: 10%;
   padding: 0 30px;
@@ -184,7 +180,7 @@ h3{
 #buttononeshot{
   font-family:'nene_weno', sans-serif;
   height: 60px;
-  color: blue;
+  color: #345aa9;
   font-size: 2rem;
   border-radius: 10%;
   padding: 0 30px;
@@ -333,6 +329,10 @@ h3{
 
 /* Pantalla win */
 
+#pantallaWin{
+  display: none;
+}  
+
 .winScreen{
   margin: auto;
   background-image: url('../assets/image/bg-winscreen.svg');
@@ -345,8 +345,9 @@ h3{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  
+  position: absolute;
+  top: 25%;
+  left: 10%
 }
 
 .winScreen h2 {
@@ -370,7 +371,11 @@ h3{
   margin-bottom: 20px;
 }
 
-/*------------------------------------------------------*/
+/*Contenedor del juego*/
+
+
+
+/* MEDIA QUERIES */
 
 @media screen and (min-width: 1024px) {
   h1 {
@@ -396,7 +401,9 @@ h3{
   .winScreen{
     width: 45%;  
     border-radius: 10px;
+    left: 28%;
   }
+
   .winScreen h2 {
     font-size: 2.4rem;
     margin-top: 20px
