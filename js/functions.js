@@ -67,6 +67,7 @@ function loadJSON(modo) {
 // Función para generar un botón para seleccionar pistas
 function solicitarPistas() {
   numeroClics++;
+  document.getElementById('question').play();
 
   if (palabraSeleccionada.pista.pista2 !== undefined) {
     if (numeroClics === 1) {
@@ -155,6 +156,7 @@ function accounting(correct) {
   }
   return document.getElementById("contador").textContent = totalScore;
 }
+
 //Función crea los espacios en funcion al numero de letras de la palabra escogida
 function spaceGen() {
   wordSize = arrayWord.length;
@@ -180,39 +182,39 @@ function inputLetter(letras) {
         j++
         z++
         accounting('true')
-        oneshotbutton()
+        document.getElementById("buttononeshot").style.display = "none";
       }
     }
 
     if (z === wordSize) {
-      console.log('win');
       document.getElementById("pantallaWin").style.display = "flex";
-      document.getElementById("main-screen").style.display = "none"
+      document.getElementById("main-screen").style.display = "none";
     }
 
     const omar = arrayWord.filter(letra => { return letras === letra })
     if (omar.length === 0) {
-      accounting('false')
       fail++
+      document.getElementById('letterfail').play();
       loose()
     }
-    console.log(totalScore);
   }
 }
 
+//funcion que controla el oneshot
 function oneshotbutton() {
-  if (totalScore === 0) {
+  if (oneshotexecute === 'true') {
     let oneshotprompt = prompt("¿Quieres adivinar la palabra?")
-    if (palabraSeleccionada.palabra === oneshotprompt.toUpperCase()) {
+    if (oneshotprompt === null) {
+    } else if (palabraSeleccionada.palabra === oneshotprompt.toUpperCase()) {
       accounting('oneShot')
+      document.getElementById("pantallaWin").style.display = "flex";
+      document.getElementById("main-screen").style.display = "none"
       document.getElementById("buttononeshot").style.display = "none";
-    } else if (oneshotprompt === null) {
+      oneshotexecute = 'false'
     } else {
       accounting('false')
       document.getElementById("buttononeshot").style.display = "none";
     }
-  } else {
-    document.getElementById("buttononeshot").style.display = "none";
   }
 }
 
@@ -221,26 +223,36 @@ function loose() {
   switch (fail) {
 
     case 1:
+      accounting('false')
       document.getElementById('headstick').style.display = "block";
+      document.getElementById("buttononeshot").style.display = "none";
       break;
 
     case 2:
+      accounting('false')
       document.getElementById('bodystick').style.display = "block";
       break;
 
     case 3:
+      accounting('false')
       document.getElementById('rightarmstick').style.display = "block";
       break;
 
     case 4:
+      accounting('false')
       document.getElementById('leftarmstick').style.display = "block";
       break;
 
     case 5:
+      accounting('false')
       document.getElementById('rightlegstick').style.display = "block";
       break;
     case maxFails:
+      accounting('false')
       document.getElementById('leftlegstick').style.display = "block";
+      document.getElementById('loseScreen').style.display = "flex";
+      document.getElementById("contadorloose").textContent = totalScore;
+      document.getElementById("main-screen").style.display = "none";
       break;
 
     default:
@@ -249,13 +261,14 @@ function loose() {
 }
 
 //funcion del botón reset
-function reset() {
+function reset(typereset) {
   let a = "a"
-  let z = "z"
+  let zz = "z"
   let i = a.charCodeAt(0);
-  let j = z.charCodeAt(0);
+  let j = zz.charCodeAt(0);
   let letras = "";
-  let numeroClics = 0;
+  numeroClics = 0;
+  oneshotexecute = 'true';
 
   for (i; i <= j; i++) {
     letras = String.fromCharCode(i).toUpperCase();
@@ -274,19 +287,25 @@ function reset() {
     const collection = document.getElementsByClassName(ids);
     collection[0].remove();
   }
-
   z = 0;
-  totalScore = 0;
+  if (typereset === 'true') {
+    totalScore = 0;
+  }
+  fail = 0;
   displaydefault()
 }
-
 function displaydefault() {
   document.getElementById("main-menu").style.display = "flex";
   document.getElementById("main-screen").style.display = "none";
-  // document.getElementById('circle').style.display = "none";
   document.getElementById("buttononeshot").style.display = "inline";
   document.getElementById("buttonPistas").style.display = "inline";
   document.getElementById("contador").textContent = totalScore;
   document.getElementById("pantallaWin").style.display = "none";
   document.getElementById("loseScreen").style.display = "none";
+  document.getElementById('headstick').style.display = "none";
+  document.getElementById('bodystick').style.display = "none";
+  document.getElementById('rightarmstick').style.display = "none";
+  document.getElementById('leftarmstick').style.display = "none";
+  document.getElementById('rightlegstick').style.display = "none";
+  document.getElementById('leftlegstick').style.display = "none";
 }

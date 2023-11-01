@@ -13,7 +13,7 @@
     <nav>
       <menu>
         <!-- Botón resetear la partida -->
-        <button onclick="reset()">
+        <button onclick="reset('true')">
           <i class="fa-solid fa-rotate-right"></i>
         </button>
         <!-- Botón silenciar música -->
@@ -79,8 +79,8 @@
     <video src="./assets/video/" width="350" height="260" autoplay></video>
     <div id="puntuacion"></div>
     <div class="winButtons">
-      <button onclick="reset()">Volver a empezar</button>
-      <button>Continuar</button>
+      <button onclick="reset('true')">Volver a empezar</button>
+      <button onclick="reset('false')">Continuar</button>
     </div>
   </section>
 
@@ -89,12 +89,27 @@
     <video src="./assets/video/" width="350" height="260" autoplay></video>
     <div id="puntuacion"></div>
     <div class="loseButtons">
-      <button onclick="reset()">Intentalo de nuevo</button>  
+      <!-- Modificar clases la id no -->
+      <div class="containercontadorloose">
+        <h3>Puntos</h3>
+        <p id="contadorloose">0</p>
+      </div>
+
+      <button onclick="reset('true')">Intentalo de nuevo</button>  
     </div>
   </section>
 
   </div>
 
+  <audio id="letterfail">
+    <source src="./assets/music/light-version/letterfail.mp3" type="audio/mp3">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+  <audio id="question">
+    <source src="./assets/music/light-version/question.mp3" type="audio/mp3">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+  
   <script src="./js/functions.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/config.js"></script>

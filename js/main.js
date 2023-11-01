@@ -18,6 +18,7 @@ let palabraSeleccionada;
 const pistasButton = document.getElementById("buttonPistas")
 pistasButton.addEventListener("click", solicitarPistas)
 let numeroClics = 0;
+let oneshotexecute = 'true';
 
 // Eventos click
 muteButton.addEventListener("click", volume);
