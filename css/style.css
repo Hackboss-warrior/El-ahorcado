@@ -343,7 +343,7 @@ h3{
   background-size: cover;
   background-repeat: no-repeat;
   width: 80%;
-  height: 500px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -374,6 +374,22 @@ h3{
   margin-bottom: 20px;
 }
 
+.containercontadorloose {
+background-color: greenyellow;
+/* border-radius: 0 0 0 36%; */
+margin-bottom: 1rem;
+}
+#contadorloose{
+  background-color:#feff9c;
+  margin: 0 4rem;
+  border-radius: 50%;
+text-align: center;
+font-size: 1.5rem;
+color:red
+}
+#resetLose{
+  margin-bottom: 3rem;
+}
 /*Contenedor del juego*/
 
 
@@ -408,15 +424,21 @@ h3{
   }
 
   .finalScreen h2 {
+    height: 4rem;
     font-size: 2.4rem;
-    margin-top: 20px
+    margin-top: 5px
   }
-
-  .winButtons {
+  .winButtons{
+    width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  }
+  /* .winButtons {
     display: flex;
     justify-content: center;
     gap: 100px;
-  }
+  } */
 
 .finalScreen video {
   width: 450px;

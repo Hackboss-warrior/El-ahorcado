@@ -187,6 +187,7 @@ function inputLetter(letras) {
     }
 
     if (z === wordSize) {
+      document.getElementById('winner').play();// musica gameOver
       document.getElementById("pantallaWin").style.display = "flex";
       document.getElementById("main-screen").style.display = "none";
     }
@@ -253,6 +254,7 @@ function loose() {
       document.getElementById('loseScreen').style.display = "flex";
       document.getElementById("contadorloose").textContent = totalScore;
       document.getElementById("main-screen").style.display = "none";
+      document.getElementById('gameOver').play();// musica gameOver
       break;
 
     default:
