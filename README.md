@@ -69,6 +69,7 @@ BASE DE DATOS:
 - Las puntuaciones se almacenan en un contador (variable)
 
 ---
+
 # DOC
 
 DOCUMENTACION JSON
@@ -77,7 +78,7 @@ Creamos 4 archivos json distintos para almacenar la nuestro vocabulario con un a
 PUNTUACIONES
 Función de conteo que contiene un switch con cuatro posibles variables que ejecuntan operaciones distintas. la intención es que si marcas reset, reinicie el contador; que sume o reste puntos dependiendo de si acierrtas o no y por ultimo le hemos añadido la posibilidad de un bonus extra si se resuelve la palabra completa.
 
-
+---
 
 # Índice de documentos
 
@@ -94,6 +95,8 @@ Función de conteo que contiene un switch con cuatro posibles variables que ejec
 - config.js --> En este documento se encuentran los parámetros configurables relacionados con la puntuación del juego.
 
 - carpeta "assets" --> En ella incluimos todos los recursos utilizados a lo largo del proyecto.
+
+---
 
 # Documentación
 
