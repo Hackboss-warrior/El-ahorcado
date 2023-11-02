@@ -19,7 +19,7 @@
 :root {
   --background-light: rgb(112, 187, 112);
   --background-dark: #000000;
-  --text-color-light: black;
+  --text-color-postsit: #feff9c;
   --text-color-dark: #f8621f;
 }
 
@@ -101,7 +101,10 @@ h3{
   font-weight:900;
 
 }
+#keyboard button{
+  background-color: var(--text-color-postsit);
 
+ }
 /*Main screen*/
 
 #main-screen {
