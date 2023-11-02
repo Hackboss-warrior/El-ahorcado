@@ -25,9 +25,11 @@ function volume() {
   if (active_sound) {
     console.log("Modo claro activado");
     muteButton.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    sonidoonoff = true;
   } else {
     console.log("Modo oscuro activado");
     muteButton.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+    sonidoonoff = false;
   }
 }
 
@@ -71,20 +73,24 @@ function loadJSON(modo) {
 // Función para generar un botón para seleccionar pistas
 function solicitarPistas() {
   numeroClics++;
+  if (sonidoonoff === true){
   document.getElementById('question').play();
-
-  if (palabraSeleccionada.pista.pista2 !== undefined) {
-    if (numeroClics === 1) {
+  }
+  setTimeout(function(){
+    if (palabraSeleccionada.pista.pista2 !== undefined) {
+      if (numeroClics === 1) {
+        alert(palabraSeleccionada.pista.pista1)
+        console.log('Two second later');
+      } else if (numeroClics === 2) {
+        alert(palabraSeleccionada.pista.pista2)
+        document.getElementById("buttonPistas").style.display = "none";
+      }
+    } else {
       alert(palabraSeleccionada.pista.pista1)
-    } else if (numeroClics === 2) {
-      alert(palabraSeleccionada.pista.pista2)
       document.getElementById("buttonPistas").style.display = "none";
     }
-  } else {
-    alert(palabraSeleccionada.pista.pista1)
-    document.getElementById("buttonPistas").style.display = "none";
-  }
-  accounting("false")
+    accounting("false")
+  }, 100);
 
 }
 
@@ -129,9 +135,7 @@ function showKeyboard(a, z) {
 
 // Función leer la tecla pulsada en el teclado
 function keyPress(event) {
-  const key = event.key.toUpperCase(); // Obtiene la tecla que se presionó
-
-
+  const key = event.key.toUpperCase();
   inputLetter(key);
 }
 
@@ -191,7 +195,9 @@ function inputLetter(letras) {
     }
 
     if (z === wordSize) {
-      document.getElementById('winner').play();// musica gameOver
+      if (sonidoonoff === true){
+      document.getElementById('winner').play();
+      }
       document.getElementById("pantallaWin").style.display = "flex";
       document.getElementById("main-screen").style.display = "none";
     }
@@ -199,7 +205,12 @@ function inputLetter(letras) {
     const omar = arrayWord.filter(letra => { return letras === letra })
     if (omar.length === 0) {
       fail++
+      if (fail !== 6){
+        console.log(fail)
+      if (sonidoonoff === true){
       document.getElementById('letterfail').play();
+      }
+    }
       loose()
     }
   }
@@ -207,22 +218,25 @@ function inputLetter(letras) {
 
 //funcion que controla el oneshot
 function oneshotbutton() {
- 
-  if (oneshotexecute === 'true') {
-    // document.getElementById('oneshotaudio').play();
-    let oneshotprompt = prompt("¿Quieres adivinar la palabra?")  
-    if (oneshotprompt === null) {
-    } else if (palabraSeleccionada.palabra === oneshotprompt.toUpperCase()) {
-      accounting('oneShot')
-      document.getElementById("pantallaWin").style.display = "flex";
-      document.getElementById("main-screen").style.display = "none"
-      document.getElementById("buttononeshot").style.display = "none";
-      oneshotexecute = 'false'
-    } else {
-      accounting('false')
-      document.getElementById("buttononeshot").style.display = "none";
-    }
+  if (sonidoonoff === true){
+    document.getElementById('oneshotaudio').play();
   }
+  setTimeout(function(){
+    if (oneshotexecute === 'true') {
+      let oneshotprompt = prompt("¿Quieres adivinar la palabra?")  
+      if (oneshotprompt === null) {
+      } else if (palabraSeleccionada.palabra === oneshotprompt.toUpperCase()) {
+        accounting('oneShot')
+        document.getElementById("pantallaWin").style.display = "flex";
+        document.getElementById("main-screen").style.display = "none"
+        document.getElementById("buttononeshot").style.display = "none";
+        oneshotexecute = 'false'
+      } else {
+        accounting('false')
+        document.getElementById("buttononeshot").style.display = "none";
+      }
+    }
+  }, 100);
 }
 
 //Función Cuando pierdes
@@ -260,7 +274,9 @@ function loose() {
       document.getElementById('loseScreen').style.display = "flex";
       document.getElementById("contadorloose").textContent = totalScore;
       document.getElementById("main-screen").style.display = "none";
-      document.getElementById('gameOver').play();// musica gameOver
+      if (sonidoonoff === true){
+      document.getElementById('gameOver').play();
+      }
       break;
 
     default:
@@ -277,7 +293,6 @@ function reset(typereset) {
   let letras = "";
   numeroClics = 0;
   oneshotexecute = 'true';
-
   for (i; i <= j; i++) {
     letras = String.fromCharCode(i).toUpperCase();
 
@@ -302,7 +317,10 @@ function reset(typereset) {
   fail = 0;
   displaydefault()
 }
+
 function displaydefault() {
+  document.getElementById('gameOver').pause();
+  document.getElementById('winner').pause();
   document.getElementById("main-menu").style.display = "flex";
   document.getElementById("main-screen").style.display = "none";
   document.getElementById("buttononeshot").style.display = "inline";

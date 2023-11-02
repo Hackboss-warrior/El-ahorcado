@@ -12,6 +12,7 @@ let fail = 0;
 let ids;
 // Botón de mutear
 const muteButton = document.getElementById("mute");
+let sonidoonoff = true;
 
 // Botón de pistas
 let palabraSeleccionada;
