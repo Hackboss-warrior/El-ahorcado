@@ -124,7 +124,7 @@ function showKeyboard(a, z) {
 
   for (i; i <= j; i++) {
     letras = String.fromCharCode(i).toUpperCase();
-    document.getElementById("keyboard").innerHTML += "<button id = '" + letras + "' onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'style=\"color: #345aa9; height: 3rem; width: 2.5rem; font-size: 20px; font-family: 'nene_weno'\">" + letras + "</button>";
+    document.getElementById("keyboard").innerHTML += "<button id = '" + letras + "' onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'style=\"color: #345aa9; height: 3rem; width: 2.5rem; font-size: 20px; cursor: pointer;font-family: 'nene_weno'\">" + letras + "</button>";
 
     if (i === 110) {
       document.getElementById("keyboard").innerHTML +=

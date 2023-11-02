@@ -96,6 +96,7 @@
   #palabraJuego{
     display: flex;
     justify-content: center;
+    align-items: baseline;
     gap: 0.25rem;
     color: var(--text-color-dark);
     font-weight:900;
@@ -177,6 +178,7 @@
     border: none;
     background-color:var(--text-color-dark);
     transition: transform 0.2s;
+    cursor: pointer;
   }
   
   #buttonPistas:hover{
@@ -194,6 +196,7 @@
     border: none;
     background-color: var(--text-color-dark);
     transition: transform 0.2s;
+    cursor: pointer;
   }
   
   #buttononeshot:hover{
@@ -380,6 +383,7 @@
     border: none;
     border-radius: 8px;
     margin-bottom: 20px;
+    cursor: pointer;
   }
   
   .containercontadorloose {

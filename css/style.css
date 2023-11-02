@@ -25,7 +25,6 @@
   --background-light: rgb(112, 187, 112);
   --background-dark: #000000;
   --text-color-postsit: #feff9c;
-  --text-color-dark: #f8621f;
 }
 
 body {
@@ -95,15 +94,18 @@ h3{
 #palabraJuego{
   display: flex;
   justify-content: center;
+  align-items: baseline;
   gap: 0.25rem;
   color: white;
   font-weight:900;
 
 }
+
 #keyboard button{
   background-color: var(--text-color-postsit);
 
- }
+}
+
 /*Main screen*/
 
 #main-screen {
@@ -175,6 +177,7 @@ h3{
   border: none;
   background-color: #feff9c;
   transition: transform 0.2s;
+  cursor: pointer;
 }
 
 #buttonPistas:hover{
@@ -192,6 +195,7 @@ h3{
   border: none;
   background-color: #feff9c;
   transition: transform 0.2s;
+  cursor: pointer;
 }
 
 #buttononeshot:hover{
@@ -376,6 +380,7 @@ h3{
   border: none;
   border-radius: 8px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .containercontadorloose {
@@ -415,6 +420,7 @@ font-weight: 600;
   section > button {
     font-size: 18px;
   }
+  
   .lettervisu{
     color: #345aa9;
     font-size: 3rem;;
