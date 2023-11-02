@@ -191,7 +191,7 @@ function inputLetter(letras) {
         z++
         accounting('true')
         document.getElementById("buttononeshot").style.display = "none";
-        if (sonidoonoff === true && accounting('true')) {
+        if (sonidoonoff === true && accounting('true') && z < wordSize) {
           document.getElementById("lettersuccess").play();
         }
       }
