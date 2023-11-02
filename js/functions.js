@@ -4,12 +4,15 @@
 function lightDark() {
   active_mode = !active_mode;
  const light_dark = document.getElementById("lightDark");
+  const darkCss = document.getElementById('darkCSS');
   
   body.classList.toggle("dark");
   if (active_mode) {
     console.log("Modo claro activado");
+    darkCss.href = "./css/style.css"
     light_dark.innerHTML = '<i class="fa-solid fa-moon "></i>';
   } else {
+    darkCss.href ="./css/dark_mode.css";
     console.log("Modo oscuro activado");
     light_dark.innerHTML = '<i class="fa-regular fa-sun"></i>';
   }
