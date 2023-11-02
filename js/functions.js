@@ -3,16 +3,16 @@
 // Función Controlador de botón de modo noche / modo día
 function lightDark() {
   active_mode = !active_mode;
- const light_dark = document.getElementById("lightDark");
+  const light_dark = document.getElementById("lightDark");
   const darkCss = document.getElementById('darkCSS');
-  
+
   body.classList.toggle("dark");
   if (active_mode) {
     console.log("Modo claro activado");
     darkCss.href = "./css/style.css"
     light_dark.innerHTML = '<i class="fa-solid fa-moon "></i>';
   } else {
-    darkCss.href ="./css/dark_mode.css";
+    darkCss.href = "./css/dark_mode.css";
     console.log("Modo oscuro activado");
     light_dark.innerHTML = '<i class="fa-regular fa-sun"></i>';
   }
@@ -73,10 +73,10 @@ function loadJSON(modo) {
 // Función para generar un botón para seleccionar pistas
 function solicitarPistas() {
   numeroClics++;
-  if (sonidoonoff === true){
-  document.getElementById('question').play();
+  if (sonidoonoff === true) {
+    document.getElementById('question').play();
   }
-  setTimeout(function(){
+  setTimeout(function () {
     if (palabraSeleccionada.pista.pista2 !== undefined) {
       if (numeroClics === 1) {
         alert(palabraSeleccionada.pista.pista1)
@@ -124,7 +124,7 @@ function showKeyboard(a, z) {
 
   for (i; i <= j; i++) {
     letras = String.fromCharCode(i).toUpperCase();
-    document.getElementById("keyboard").innerHTML += "<button id = '" + letras + "' onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'style=\"color: #345aa9; height: 3rem; width: 2.5rem; font-size: 18px; font-family:'nene_weno'\">" + letras + "</button>";
+    document.getElementById("keyboard").innerHTML += "<button id = '" + letras + "' onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'style=\"color: #345aa9; height: 3rem; width: 2.5rem; font-size: 20px; font-family: 'nene_weno'\">" + letras + "</button>";
 
     if (i === 110) {
       document.getElementById("keyboard").innerHTML +=
@@ -177,7 +177,7 @@ function spaceGen() {
 
 }
 
-// Función leer pulsaciones de teclado en pantalla o en su casa de sugerencia de letras por teclado
+// Función leer pulsaciones de teclado en pantalla o en su caso de sugerencia de letras por teclado
 function inputLetter(letras) {
   if (!document.getElementById(letras).disabled) {
     document.getElementById(letras).style.backgroundColor = '#c81d11';
@@ -191,12 +191,17 @@ function inputLetter(letras) {
         z++
         accounting('true')
         document.getElementById("buttononeshot").style.display = "none";
+        if (sonidoonoff === true && accounting('true')) {
+          document.getElementById("lettersuccess").play();
+        }
       }
     }
 
+
+
     if (z === wordSize) {
-      if (sonidoonoff === true){
-      document.getElementById('winner').play();
+      if (sonidoonoff === true) {
+        document.getElementById('winner').play();
       }
       document.getElementById("pantallaWin").style.display = "flex";
       document.getElementById("main-screen").style.display = "none";
@@ -205,12 +210,11 @@ function inputLetter(letras) {
     const omar = arrayWord.filter(letra => { return letras === letra })
     if (omar.length === 0) {
       fail++
-      if (fail !== 6){
-        console.log(fail)
-      if (sonidoonoff === true){
-      document.getElementById('letterfail').play();
+      if (fail !== 6) {
+        if (sonidoonoff === true) {
+          document.getElementById('letterfail').play();
+        }
       }
-    }
       loose()
     }
   }
@@ -218,12 +222,12 @@ function inputLetter(letras) {
 
 //funcion que controla el oneshot
 function oneshotbutton() {
-  if (sonidoonoff === true){
+  if (sonidoonoff === true) {
     document.getElementById('oneshotaudio').play();
   }
-  setTimeout(function(){
+  setTimeout(function () {
     if (oneshotexecute === 'true') {
-      let oneshotprompt = prompt("¿Quieres adivinar la palabra?")  
+      let oneshotprompt = prompt("¿Quieres adivinar la palabra?")
       if (oneshotprompt === null) {
       } else if (palabraSeleccionada.palabra === oneshotprompt.toUpperCase()) {
         accounting('oneShot')
@@ -274,8 +278,8 @@ function loose() {
       document.getElementById('loseScreen').style.display = "flex";
       document.getElementById("contadorloose").textContent = totalScore;
       document.getElementById("main-screen").style.display = "none";
-      if (sonidoonoff === true){
-      document.getElementById('gameOver').play();
+      if (sonidoonoff === true) {
+        document.getElementById('gameOver').play();
       }
       break;
 

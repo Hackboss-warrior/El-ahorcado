@@ -8,6 +8,11 @@
   src: url('../assets/font/handwrited.ttf');
 }
 
+  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Lato:wght@300;400&family=Roboto:wght@100&display=swap');
+
+  
+
+
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +35,6 @@ body {
   background-position: center;
   transition: background-color 0.5s;
 }
-
 
 menu > button {
   border: none;
@@ -327,7 +331,7 @@ h3{
   transform: translate(-400%, 20px) rotate(-135deg);
 } 
 
-/* Pantalla Win & Lose */
+/* Pantallas Win & Lose */
 
 #pantallaWin{
   display: none;
@@ -349,7 +353,7 @@ h3{
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 25%;
+  top: 10%;
   left: 10%
 }
 
@@ -375,17 +379,23 @@ h3{
 }
 
 .containercontadorloose {
-background-color: greenyellow;
+border: #cd585a 3px solid;
+border-radius: 10px;
+background-color: white;
 /* border-radius: 0 0 0 36%; */
 margin-bottom: 1rem;
+padding: 10px;
+
 }
 #contadorloose{
   background-color:#feff9c;
-  margin: 0 4rem;
-  border-radius: 50%;
+  margin: 0.4rem;
+  border-radius: 10px;
 text-align: center;
 font-size: 1.5rem;
-color:red
+color:red;
+font-family: "handwrited";
+font-weight: 600;
 }
 #resetLose{
   margin-bottom: 3rem;
@@ -421,6 +431,7 @@ color:red
     width: 45%;  
     border-radius: 10px;
     left: 28%;
+    top: 20%;
   }
 
   .finalScreen h2 {

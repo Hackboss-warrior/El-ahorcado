@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El juego del ahorcado</title>
   <link rel="icon" href="./assets/image/horca.ico">
- 
+
   <link rel="stylesheet" href="./css/style.css" id="darkCSS" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <!-- modo oscuro -->
- <!-- <link rel="stylesheet" href="./css/dark_mode.css" id="darkCSS"> -->
+  <!-- <link rel="stylesheet" href="./css/dark_mode.css" id="darkCSS"> -->
 </head>
 
 <body>
@@ -75,7 +75,7 @@
         <div id="keyboard"></div>
       </div>
     </div>
-  
+
   </div>
   <!-- screens of victory and game over -->
   <section class="finalScreen" id="pantallaWin">
@@ -99,41 +99,48 @@
         <p id="contadorloose">0</p>
       </div>
 
-    <button id="resetLose" onclick="reset('true')">Inténtalo de nuevo</button>  
+      <button id="resetLose" onclick="reset('true')">Inténtalo de nuevo</button>
     </div>
   </section>
 
   </div>
   <span>
-  <audio id="winner">
-    <source src="./assets/music/resultGame/winner.mp3" type="audio/mp3">
-    Tu navegador no soporta el elemento de audio.</audio>
-  <audio id="gameOver">
-    <source src="./assets/music/resultGame/ocarina-of-time-73-game-over.mp3" type="audio/mp3" delay>
-    Tu navegador no soporta el elemento de audio.</audio>
-  <audio id="letterfail">
-    <source src="./assets/music/light-version/letterfail.mp3" type="audio/mp3">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
-  <audio id="question">
-    <source src="./assets/music/light-version/question.mp3" type="audio/mp3">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
-  <audio id="oneshotaudio">
-    <source src="./assets/music/light-version/Oneshoot.mp3" type="audio/mp3">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
-  <!--modo halloween-->
-<!-- 
+    <audio id="winner">
+      <source src="./assets/music/resultGame/winner.mp3" type="audio/mp3">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+    <audio id="gameOver">
+      <source src="./assets/music/resultGame/ocarina-of-time-73-game-over.mp3" type="audio/mp3" delay>
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+    <audio id="letterfail">
+      <source src="./assets/music/light-version/letterfail.mp3" type="audio/mp3">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+    <audio id="question">
+      <source src="./assets/music/light-version/question.mp3" type="audio/mp3">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+    <audio id="oneshotaudio">
+      <source src="./assets/music/light-version/Oneshoot.mp3" type="audio/mp3">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <audio id="lettersuccess">
+      <source src="./assets/music/light-version/letter-success.mp3" type="audio/mp3">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+    <!--modo halloween-->
+    <!-- 
 <audio id="gameOver">
   <source src="./assets/music/dark-version/risa_bruja.mp3" type="audio/mp3">
   Tu navegador no soporta el elemento de audio.
 </audio>
    -->
-  <script src="./js/functions.js"></script>
-  <script src="./js/main.js"></script>
-  <script src="./js/config.js"></script>
-</span>
+    <script src="./js/functions.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/config.js"></script>
+  </span>
 </body>
 
 </html>
