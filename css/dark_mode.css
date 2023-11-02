@@ -139,17 +139,7 @@
     justify-content: center;
     gap: 25px;
   }
-  
-  #contador {
-    font-family: 'handwrited';
-    text-align: center;
-    justify-content: center;
-    
-    height: 20%;
-    width: 75px;
-    background-color: var(--text-color-blood);
-    border-radius: 20%;
-  }
+ 
   
   .container{
     display: flex;
@@ -167,8 +157,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+   
   }
-  
+   
+  #contador {
+    font-family: 'handwrited';
+    text-align: center;
+    justify-content: center;   
+    height: 30%;
+    width: 75px;
+    background-color: var(--text-color-blood);
+    border-radius: 20%;
+  }
   #buttonPistas{
     font-family:'nene_weno', sans-serif;
     height: 60px;

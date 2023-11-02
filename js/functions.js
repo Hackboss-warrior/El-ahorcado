@@ -3,7 +3,8 @@
 // Función Controlador de botón de modo noche / modo día
 function lightDark() {
   active_mode = !active_mode;
-  const light_dark = document.getElementById("lightDark");
+ const light_dark = document.getElementById("lightDark");
+  
   body.classList.toggle("dark");
   if (active_mode) {
     console.log("Modo claro activado");
@@ -203,8 +204,10 @@ function inputLetter(letras) {
 
 //funcion que controla el oneshot
 function oneshotbutton() {
+ 
   if (oneshotexecute === 'true') {
-    let oneshotprompt = prompt("¿Quieres adivinar la palabra?")
+    // document.getElementById('oneshotaudio').play();
+    let oneshotprompt = prompt("¿Quieres adivinar la palabra?")  
     if (oneshotprompt === null) {
     } else if (palabraSeleccionada.palabra === oneshotprompt.toUpperCase()) {
       accounting('oneShot')
