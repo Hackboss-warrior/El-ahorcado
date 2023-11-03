@@ -1,6 +1,6 @@
 # El juego del ahorcado
 ---
-> [!IMPORTANT]
+> [!IMPORTANT]GRUPO
 > Carlos Briceño Gil, Aaron Otero Castro, Omar Díaz González, Xavi Cancio.
 ---
 
