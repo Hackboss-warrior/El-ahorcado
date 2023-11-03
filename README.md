@@ -5,6 +5,8 @@
 > Carlos Briceño Gil, Aaron Otero Castro, Omar Díaz González, Xavi Cancio.
 ---
 
+[Contribution guidelines for this project](docs/CONTRIBUTING.md)
+
 # Índice de documentos
 
 - index.html --> Es la página principal, donde se estructuran los diferentes contenidos del juego.
@@ -21,19 +23,6 @@
 
 - carpeta "assets" --> En ella incluimos todos los recursos utilizados a lo largo del proyecto.
 
----
-## Estructura de directorios
-100. First El-ahorcado
-       - First nested list item
-         - Second nested list item
-
-    - assets
-    - css
-    - js
-        - config.js
-        - functions.js
-        - main.js
-    - index.html
 ---
 # Documentación
 
