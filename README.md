@@ -55,5 +55,5 @@ Si se diese la otra situación posible, y el jugador no lograse adivinar la pala
 
 Como mencionabamos antes, y para conmemorar la fiesta de Halloween, hemos decidio incluir un modo oscuro, en el que existen variaciones de estilo de las principales partes del programa. Para ello, hemos creado otro documento css, el cuál se activa al pulsar el botón de modo nocturno situado en la parte superior derecha.
 
-[!NOTE]
-Highlights information that users should take into account, even when skimming.
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
