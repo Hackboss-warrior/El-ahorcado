@@ -7,6 +7,8 @@
 
 [Contribution guidelines for this project](docs/CONTRIBUTING.md)
 
+[texto a mostrar](#mi-titulo-a-anclar)
+
 # Índice de documentos
 
 - index.html --> Es la página principal, donde se estructuran los diferentes contenidos del juego.
