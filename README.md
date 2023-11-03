@@ -34,7 +34,7 @@
 ---
 # Documentación
 
-El proyecto trata de crear un juego basado en el clásico juego del ahorcado, además, hemos aprovechado este para celebrar el Samaín.
+El proyecto trata de crear un programa basado en el clásico juego del ahorcado.
 
 En primer lugar hemos creado 3 modos de dificultad; fácil, normal, difícil y un modo personalizado llamado "Modo Samu", en este último empleamos para el juego tanto palabras relacionadas con el sector tech, como palabras repetidas en clase. Para cada uno de los modos de dificultad hemos utilizado un archivo JSON que actúa como base de datos tanto para las palabras a utilizar como para las pistas de las propias palabras.
 
