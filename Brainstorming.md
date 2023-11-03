@@ -1,20 +1,24 @@
+# Leyenda GitHub
+
+ADD | crear archivo
+DELL | Borrar archivo
+UPD | Actualizar archivo
+
 ## Brainstorming
 
 ### CONCEPTUALIZACIÓN:
 
-- Modo oscuro (terror) -> Temática pizarra escolar halloween. Fondo pizarra; font nosifer.
+- Modo oscuro (terror) -> Temática halloween. font nosifer.
 
 - Modo claro -> Temática cuaderno escolar. Fondo libreta; font <h>nene Weno</h> <p>handwrited</p>
 
 - Pantalla menú: niveles de dificultad -> fácil / normal / difícil / Samu
 
-- Sonidos: Música de fondo -> Modo claro: tono escolar / Modo oscuro: Música tétrica. Botón silenciar música
-
 - Efectos de sonido: Sonido para acierto y fallo.
 
 - Diseño monigote: Modo claro -> Tradicional / Modo oscuro-> Cabeza calabaza
 
-- Game Over: Pantalla con bicho y sonido para asustar.
+- Game Over: Pantallas que indiquen cuando ganas y cuando pierdes.
 
 - Crear favicon
 
@@ -27,8 +31,6 @@
 - La palabra en pantalla debe aparece sustituida por guiones bajos.
 
 - Botón resetear juego.
-
-- Puntos por resolución de palabras. Por cada letra acertada sumar 1 punto, por letra fallada restar dos puntos si resuelves la palabra entera 5 puntos. Si se muere el monigote pierdes todos los puntos y hay que ir a reset.
 
 - Puntuar de diferente manera las vocales y las consonantes (las vocales 2 puntos al haber menos, las consonantes 1)
 

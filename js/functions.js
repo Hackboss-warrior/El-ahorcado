@@ -1,6 +1,6 @@
 "use strict";
 
-// Función Controlador de botón de modo noche / modo día
+// Función Controladora de botón de modo noche / modo día
 function lightDark() {
   active_mode = !active_mode;
   const light_dark = document.getElementById("lightDark");

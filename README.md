@@ -1,13 +1,8 @@
-# El-ahorcado
+# El juego del ahorcado
 
-# Primer proyecto de Hackaboss
-
-ADD | crear archivo
-DELL | Borrar archivo
-UPD | Actualizar archivo
+Grupo: Carlos Briceño Gil, Aaron Otero Castro, Omar Díaz González, Xavi Cancio
 
 ---
-
 
 # Índice de documentos
 
