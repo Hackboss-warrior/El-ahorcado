@@ -5,15 +5,14 @@
 > Carlos Briceño Gil, Aaron Otero Castro, Omar Díaz González, Xavi Cancio.
 ---
 
-[Contribution guidelines for this project](docs/CONTRIBUTING.md)
 
-[texto a mostrar](#mi-titulo-a-anclar)
+
 
 # Índice de documentos
 
-- index.html --> Es la página principal, donde se estructuran los diferentes contenidos del juego.
+- [index.html](index.html) --> Es la página principal, donde se estructuran los diferentes contenidos del juego.
 
-- style.css --> Recoge todos los estilos del modo estándar del juego.
+- [style](style/style.css)style.css --> Recoge todos los estilos del modo estándar del juego.
 
 - dark_mode.css --> Recoge todos los estilos del modo oscuro del juego.
 
