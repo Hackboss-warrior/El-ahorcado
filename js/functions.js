@@ -308,7 +308,6 @@ function reset(typereset) {
     }
   }
 
-  //Oro no tocar, costo mucho, corto cabeza
   for (let i = 0; i < wordSize; i++) {
     ids = arrayWord[i].toUpperCase();
     const collection = document.getElementsByClassName(ids);

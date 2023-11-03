@@ -137,6 +137,7 @@ h3{
   gap: 25px;
 }
 
+/* Contador de puntos */
 .container{
   display: flex;
   align-items: center;
@@ -165,7 +166,7 @@ h3{
   border-radius: 15% ;
   margin-bottom: 5px;
 }
-
+/* Botón solicitar pistas */
 #buttonPistas{
   font-family:'nene_weno', sans-serif;
   height: 60px;
@@ -183,6 +184,8 @@ h3{
 #buttonPistas:hover{
   transform: scale(1.05);
 }
+
+/* Botón oneshot*/
 
 #buttononeshot{
   font-family:'nene_weno', sans-serif;
@@ -217,7 +220,7 @@ h3{
   background-color: white;
 }
 
-/* Oro no tocar, costo mucho, corto cabeza */
+/* Hangman */
 .containerhorca{
   height: 100%;
   max-height: 40vh;
@@ -409,9 +412,6 @@ font-weight: 600;
 #resetLose{
   margin-bottom: 3rem;
 }
-/*Contenedor del juego*/
-
-
 
 /* MEDIA QUERIES */
 
@@ -454,11 +454,6 @@ font-weight: 600;
   justify-content: center;
   gap: 2rem;
   }
-  /* .winButtons {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-  } */
 
 .finalScreen video {
   width: 450px;
