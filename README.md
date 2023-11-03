@@ -1,7 +1,7 @@
 # El juego del ahorcado
-
-Grupo: Carlos Briceño Gil, Aaron Otero Castro, Omar Díaz González, Xavi Cancio
-
+---
+> [!IMPORTANT]
+> Carlos Briceño Gil, Aaron Otero Castro, Omar Díaz González, Xavi Cancio.
 ---
 
 # Índice de documentos
@@ -54,6 +54,3 @@ En primer lugar, si el jugador adivina la partida cumpliendo con los requisitos 
 Si se diese la otra situación posible, y el jugador no lograse adivinar la palabra, este verá aparecer una pantalla de derrota donde se le muestran los puntos totales obtenidos y a partir de la cuál puede volver a comenzar a jugar, con la puntuación a cero.
 
 Como mencionabamos antes, y para conmemorar la fiesta de Halloween, hemos decidio incluir un modo oscuro, en el que existen variaciones de estilo de las principales partes del programa. Para ello, hemos creado otro documento css, el cuál se activa al pulsar el botón de modo nocturno situado en la parte superior derecha.
-
-> [!NOTE]
-> Highlights information that users should take into account, even when skimming.
