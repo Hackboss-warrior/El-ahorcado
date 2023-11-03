@@ -22,7 +22,16 @@
 - carpeta "assets" --> En ella incluimos todos los recursos utilizados a lo largo del proyecto.
 
 ---
-
+## Estructura de directorios
+El-ahorcado
+    - assets
+    - css
+    - js
+        - config.js
+        - functions.js
+        - main.js
+    - index.html
+---
 # Documentación
 
 El proyecto trata de crear un juego basado en el clásico juego del ahorcado, además, hemos aprovechado este para celebrar el Samaín.
