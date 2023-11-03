@@ -1,3 +1,5 @@
+[![Icons]](https://fontawesome.com/)
+
 # El juego del ahorcado
 
 ## Grupo
