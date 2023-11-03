@@ -10,19 +10,25 @@
 
 # Índice de documentos
 
-- [index.html](index.html) --> Es la página principal, donde se estructuran los diferentes contenidos del juego.
+- [index](index.html) --> Es la página principal, donde se estructuran los diferentes contenidos del juego.
 
-- [style](style/style.css)style.css --> Recoge todos los estilos del modo estándar del juego.
+- [style](css/style.css) --> Recoge todos los estilos del modo estándar del juego.
 
-- dark_mode.css --> Recoge todos los estilos del modo oscuro del juego.
+- [dark_mode](css/dark_mode.css) --> Recoge todos los estilos del modo oscuro del juego.
 
-- main.js --> En este documento JavaScript recogemos las principales variables del juego, además de algunos elementos recuperados del index.html para trabajar con ellos desde JS.
+- [main](js/main.js) --> En este documento JavaScript recogemos las principales variables del juego, además de algunos elementos recuperados del index.html para trabajar con ellos desde JS.
 
-- functions.js --> En este archivo se encuentran todas las funcionalidades del juego.
+- [functions](js/functions.js) --> En este archivo se encuentran todas las funcionalidades del juego.
 
-- config.js --> En este documento se encuentran los parámetros configurables relacionados con la puntuación del juego.
+- [config](js/config.js) --> En este documento se encuentran los parámetros configurables relacionados con la puntuación del juego.
 
-- carpeta "assets" --> En ella incluimos todos los recursos utilizados a lo largo del proyecto.
+- [Fuentes](assets/font/) --> En ella incluimos todos los recursos de fuentes utilizadas en el proyecto.
+
+- [imagenes](assets/image/) --> En ella incluimos todos los recursos visuales.
+
+- [JSON](assets/JSON/) --> En ella incluimos todo el amacenamiento de datos para el juego.
+
+- [Music](assets/music/) --> En ella incluimos todos los recursos de música y efectos de sonido.
 
 ---
 # Documentación
