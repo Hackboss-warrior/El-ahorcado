@@ -1,13 +1,13 @@
 [![Icon](https://img.shields.io/badge/Icon-V6.4.0-blue)](https://fontawesome.com/)
 
+[![Voicy](https://img.shields.io/badge/Voice-V0.0.1-red)](https://www.voicy.network/es)
+
 # El juego del ahorcado
 
 ## Grupo
 > [!IMPORTANT]
 > Carlos Briceño Gil, Aaron Otero Castro, Omar Díaz González, Xavi Cancio.
 ---
-
-
 
 
 # Índice de documentos
