@@ -1,4 +1,4 @@
-[![Icon](https://img.shields.io/badge/Icon-blue)](https://fontawesome.com/)
+[![Icon](https://img.shields.io/badge/Icon-V6.4.0-blue)](https://fontawesome.com/)
 
 # El juego del ahorcado
 
