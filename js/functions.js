@@ -1,6 +1,6 @@
 "use strict";
 
-// Función Controlador de botón de modo noche / modo día
+// Función Controladora de botón de modo noche / modo día
 function lightDark() {
   active_mode = !active_mode;
   const light_dark = document.getElementById("lightDark");
@@ -124,7 +124,7 @@ function showKeyboard(a, z) {
 
   for (i; i <= j; i++) {
     letras = String.fromCharCode(i).toUpperCase();
-    document.getElementById("keyboard").innerHTML += "<button id = '" + letras + "' onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'style=\"color: #345aa9; height: 3rem; width: 2.5rem; font-size: 20px; font-family: 'nene_weno'\">" + letras + "</button>";
+    document.getElementById("keyboard").innerHTML += "<button id = '" + letras + "' onclick= 'inputLetter(\"" + letras + "\")' value='" + letras + "'style=\"color: #345aa9; height: 3rem; width: 2.5rem; font-size: 20px; cursor: pointer;font-family: 'nene_weno'\">" + letras + "</button>";
 
     if (i === 110) {
       document.getElementById("keyboard").innerHTML +=
@@ -191,7 +191,7 @@ function inputLetter(letras) {
         z++
         accounting('true')
         document.getElementById("buttononeshot").style.display = "none";
-        if (sonidoonoff === true && accounting('true')) {
+        if (sonidoonoff === true && accounting('true') && z < wordSize) {
           document.getElementById("lettersuccess").play();
         }
       }
@@ -308,7 +308,6 @@ function reset(typereset) {
     }
   }
 
-  //Oro no tocar, costo mucho, corto cabeza
   for (let i = 0; i < wordSize; i++) {
     ids = arrayWord[i].toUpperCase();
     const collection = document.getElementsByClassName(ids);

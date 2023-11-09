@@ -25,7 +25,6 @@
   --background-light: rgb(112, 187, 112);
   --background-dark: #000000;
   --text-color-postsit: #feff9c;
-  --text-color-dark: #f8621f;
 }
 
 body {
@@ -95,15 +94,17 @@ h3{
 #palabraJuego{
   display: flex;
   justify-content: center;
+  align-items: baseline;
   gap: 0.25rem;
   color: white;
   font-weight:900;
-
 }
+
 #keyboard button{
   background-color: var(--text-color-postsit);
 
- }
+}
+
 /*Main screen*/
 
 #main-screen {
@@ -120,7 +121,7 @@ h3{
 }
 
 .lettervisu{
-  color: #a93442;
+  color: whitesmoke;
   font-size: 2rem;
   font-family: 'nene_weno';
   ;
@@ -136,6 +137,7 @@ h3{
   gap: 25px;
 }
 
+/* Contador de puntos */
 .container{
   display: flex;
   align-items: center;
@@ -146,7 +148,7 @@ h3{
 }
 
 .containercontador{
-  padding: 0.5%;
+  padding: 4px;
   background-color: #feff9c;
   border-radius: 10% ;
   display: flex;
@@ -161,9 +163,10 @@ h3{
   margin-top: 0.5rem;
   width: 75px;
   background-color: #7afcff;
-  border-radius: 30% ;
+  border-radius: 15% ;
+  margin-bottom: 5px;
 }
-
+/* Botón solicitar pistas */
 #buttonPistas{
   font-family:'nene_weno', sans-serif;
   height: 60px;
@@ -175,11 +178,14 @@ h3{
   border: none;
   background-color: #feff9c;
   transition: transform 0.2s;
+  cursor: pointer;
 }
 
 #buttonPistas:hover{
   transform: scale(1.05);
 }
+
+/* Botón oneshot*/
 
 #buttononeshot{
   font-family:'nene_weno', sans-serif;
@@ -192,6 +198,7 @@ h3{
   border: none;
   background-color: #feff9c;
   transition: transform 0.2s;
+  cursor: pointer;
 }
 
 #buttononeshot:hover{
@@ -213,7 +220,7 @@ h3{
   background-color: white;
 }
 
-/* Oro no tocar, costo mucho, corto cabeza */
+/* Hangman */
 .containerhorca{
   height: 100%;
   max-height: 40vh;
@@ -271,7 +278,11 @@ h3{
   position: absolute;
   left: 50.1%; 
   transform: translate(-48%);
-  background-color: white;
+  background-image: url(../assets/image/hangman-face.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-color: black;
   z-index: 3;
 }
 
@@ -376,6 +387,7 @@ h3{
   border: none;
   border-radius: 8px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .containercontadorloose {
@@ -400,9 +412,6 @@ font-weight: 600;
 #resetLose{
   margin-bottom: 3rem;
 }
-/*Contenedor del juego*/
-
-
 
 /* MEDIA QUERIES */
 
@@ -415,8 +424,8 @@ font-weight: 600;
   section > button {
     font-size: 18px;
   }
-  .lettervisu{
-    color: #345aa9;
+
+  .lettervisu{    
     font-size: 3rem;;
   }
   .col {
@@ -445,11 +454,6 @@ font-weight: 600;
   justify-content: center;
   gap: 2rem;
   }
-  /* .winButtons {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-  } */
 
 .finalScreen video {
   width: 450px;

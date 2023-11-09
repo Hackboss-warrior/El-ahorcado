@@ -4,12 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El juego del ahorcado</title>
-  <link rel="icon" href="./assets/image/horca.ico">
+  <link rel="icon" href="./assets/image/hangman-favicon.ico">
 
   <link rel="stylesheet" href="./css/style.css" id="darkCSS" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- modo oscuro -->
-  <!-- <link rel="stylesheet" href="./css/dark_mode.css" id="darkCSS"> -->
 </head>
 
 <body>
@@ -77,7 +75,7 @@
     </div>
 
   </div>
-  <!-- screens of victory and game over -->
+  <!-- Final screens-->
   <section class="finalScreen" id="pantallaWin">
     <h2>¡Has ganado!</h2>
     <video src="./assets/video/" width="350" height="260" autoplay poster="./assets/image/Win.png"></video>
@@ -93,7 +91,7 @@
     <video src="./assets/video/" width="350" height="260" autoplay poster="./assets/image/gameOver.png"></video>
     <div id="puntuacion"></div>
     <div class="loseButtons">
-      <!-- Modificar clases la id no -->
+
       <div class="containercontadorloose">
         <h3>Puntos</h3>
         <p id="contadorloose">0</p>
@@ -130,13 +128,7 @@
       <source src="./assets/music/light-version/letter-success.mp3" type="audio/mp3">
       Tu navegador no soporta el elemento de audio.
     </audio>
-    <!--modo halloween-->
-    <!-- 
-<audio id="gameOver">
-  <source src="./assets/music/dark-version/risa_bruja.mp3" type="audio/mp3">
-  Tu navegador no soporta el elemento de audio.
-</audio>
-   -->
+
     <script src="./js/functions.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/config.js"></script>
